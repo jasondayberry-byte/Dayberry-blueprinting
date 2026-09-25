@@ -8,33 +8,7 @@
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
-    html,body{min-height:100%}
-    body{
-      position:relative;
-      background:#050505;
-      color:#f3f3f3;
-      font-family:Arial,Helvetica,sans-serif;
-      line-height:1.6;
-      overflow-x:hidden
-    }
-    body::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      z-index:-2;
-      background-color:#000;
-      background-image:url('hero-engine-bay.jpg');
-      background-repeat:no-repeat;
-      background-position:center center;
-      background-size:auto 292%;
-    }
-    body::after{
-      content:"";
-      position:fixed;
-      inset:0;
-      z-index:-1;
-      background:linear-gradient(rgba(0,0,0,.14),rgba(0,0,0,.34))
-    }
+    body{background:#050505;color:#f3f3f3;font-family:Arial,Helvetica,sans-serif;line-height:1.6;overflow-x:hidden}
     img{display:block;max-width:100%}
     a{color:inherit;text-decoration:none}
     .red{color:#d61111}
@@ -45,7 +19,7 @@
       align-items:center;
       justify-content:center;
       padding:42px 18px;
-      background:transparent;
+      background:linear-gradient(180deg,#050505,#090909);
       border-bottom:2px solid #a80000
     }
     .hero-card{
@@ -108,11 +82,11 @@
     }
     .button.secondary{background:rgba(0,0,0,.35);border-color:#777}
 
-    main{background:transparent}
-    section{padding:72px 18px;background:rgba(5,5,5,.48)}
-    section:nth-of-type(even){background:rgba(8,8,8,.56)}
+    main{background:#050505}
+    section{padding:72px 18px;background:#050505}
+    section:nth-of-type(even){background:#080808}
     .inner{width:min(1140px,100%);margin:auto}
-    .dark{background:rgba(7,7,7,.60);border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
+    .dark{background:#090909;border-top:1px solid #202020;border-bottom:1px solid #202020}
     .section-title{text-align:center;margin-bottom:38px}
     .section-title h2{font-size:clamp(2rem,7vw,3.1rem);text-transform:uppercase;line-height:1.05;letter-spacing:1.4px}
     .section-title p{max-width:760px;margin:10px auto 0;color:#9f9f9f}
@@ -161,7 +135,7 @@
       background:#000
     }
 
-    .truck-section{padding:72px 18px;background:rgba(5,5,5,.50)}
+    .truck-section{padding:72px 18px;background:#050505}
     .truck-frame{width:min(1140px,100%);margin:auto;border:1px solid #282828;background:#000;overflow:hidden}
     .truck-photo{height:440px;background:#000;overflow:hidden}
     .truck-photo img{width:100%;height:100%;object-fit:cover;object-position:center 51%;background:#000}
@@ -169,24 +143,38 @@
     .truck-copy-box h2{font-size:clamp(2rem,8vw,4rem);text-transform:uppercase;line-height:1.04}
     .truck-copy-box p{max-width:760px;margin:13px auto 0;color:#ddd}
 
-    footer{background:rgba(0,0,0,.82);text-align:center;padding:40px 18px;border-top:2px solid #a80000}
+    .engine-section{padding:72px 18px;background:#070707}
+    .engine-frame{width:min(1100px,100%);margin:auto;background:#000;border:1px solid #292929;overflow:hidden}
+    .engine-photo{height:520px;overflow:hidden;background:#000;position:relative}
+    .engine-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center 50%;
+      transform:scale(2.15);
+      transform-origin:center center;
+    }
+    .engine-copy{padding:24px 22px 28px;text-align:center}
+    .engine-copy h2{font-size:clamp(2rem,7vw,3.2rem);text-transform:uppercase;line-height:1.05}
+    .engine-copy p{max-width:760px;margin:10px auto 0;color:#aaa}
+
+    footer{background:#000;text-align:center;padding:40px 18px;border-top:2px solid #a80000}
     footer h2{text-transform:uppercase;letter-spacing:2px}
     footer p{color:#777;margin-top:8px}
 
     @media(min-width:901px){
-      body::before{background-size:auto 205%}
+      
     }
     @media(max-width:900px){
       .cards,.split,.pricing-grid,.gallery,.data-grid{grid-template-columns:1fr}
-      body::before{
-        background-size:auto 292%;
-        background-position:center center;
-      }
+      
       .logo-window{height:125px}
       .spectro-crop{height:690px}
       .spectro-crop img{height:790px;transform:translateY(-50px)}
       .truck-photo{height:360px}
       .truck-photo img{object-position:center 51%}
+      .engine-photo{height:360px}
+      .engine-photo img{transform:scale(2.35);object-position:center 50%}
     }
   </style>
 </head>
@@ -232,6 +220,18 @@
             <p>Hands-on testing using real street and performance vehicles to compare sound, response, flow behavior and drivability.</p>
             <span class="eyebrow">Hands-On R&amp;D</span>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="engine-section">
+      <div class="engine-frame">
+        <div class="engine-photo">
+          <img src="hero-engine-bay.jpg" alt="Dayberry Blueprinting GMC Sierra engine bay">
+        </div>
+        <div class="engine-copy">
+          <h2>Sierra <span class="red">Test Platform</span></h2>
+          <p>Gen V 5.3L • BTR Stage 2 cam • VVT retained • real-world Laminar30 development and exhaust testing.</p>
         </div>
       </div>
     </section>
