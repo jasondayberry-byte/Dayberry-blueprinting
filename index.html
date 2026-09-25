@@ -6,307 +6,170 @@
   <meta name="theme-color" content="#050505">
   <title>Dayberry Blueprinting | Not Assembled. Engineered.</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: #050505;
-      color: #f4f4f4;
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-    a { color: inherit; }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:#050505;color:#f3f3f3;font-family:Arial,Helvetica,sans-serif;line-height:1.6;overflow-x:hidden}
+    img{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    .red{color:#d61111}
 
-    .hero-bg {
-      position: fixed;
-      inset: 0;
-      z-index: -3;
+    .hero{
+      min-height:100svh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:42px 18px;
       background:
-        linear-gradient(rgba(0,0,0,.48), rgba(0,0,0,.82)),
-        url('hero-engine-bay.jpg') center center / cover no-repeat;
+        linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.78)),
+        url('hero-engine-bay.jpg') center 52%/cover no-repeat;
+      border-bottom:2px solid #a80000
     }
-    .hero-shade {
-      position: fixed;
-      inset: 0;
-      z-index: -2;
-      background:
-        radial-gradient(circle at 50% 35%, rgba(180,0,0,.13), transparent 40%),
-        linear-gradient(to bottom, rgba(0,0,0,.05), rgba(0,0,0,.58));
+    .hero-card{
+      width:min(940px,100%);
+      background:rgba(0,0,0,.54);
+      border:1px solid rgba(255,255,255,.1);
+      padding:28px 18px 34px;
+      text-align:center;
+      backdrop-filter:blur(4px)
+    }
+    .logo-window{
+      width:min(620px,100%);
+      height:145px;
+      overflow:hidden;
+      margin:0 auto 18px;
+      background:#000
+    }
+    .logo-window img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center 67%
+    }
+    h1{
+      font-size:clamp(2.35rem,8vw,5.2rem);
+      line-height:1.02;
+      text-transform:uppercase;
+      letter-spacing:2px
+    }
+    .tagline{
+      margin-top:12px;
+      text-transform:uppercase;
+      letter-spacing:4px;
+      color:#d3d3d3;
+      font-size:clamp(.82rem,2.3vw,1.05rem)
+    }
+    .hero-copy{
+      max-width:760px;
+      margin:23px auto 0;
+      color:#ddd;
+      font-size:1.08rem
+    }
+    .hero-buttons{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:14px;
+      margin-top:28px
+    }
+    .button{
+      display:inline-block;
+      min-width:180px;
+      padding:14px 22px;
+      background:#ad0000;
+      border:1px solid #e21b1b;
+      color:#fff;
+      text-transform:uppercase;
+      font-weight:800;
+      letter-spacing:.6px
+    }
+    .button.secondary{background:rgba(0,0,0,.35);border-color:#777}
+
+    section{padding:72px 18px}
+    .inner{width:min(1140px,100%);margin:auto}
+    .dark{background:#090909;border-top:1px solid #202020;border-bottom:1px solid #202020}
+    .section-title{text-align:center;margin-bottom:38px}
+    .section-title h2{font-size:clamp(2rem,7vw,3.1rem);text-transform:uppercase;line-height:1.05;letter-spacing:1.4px}
+    .section-title p{max-width:760px;margin:10px auto 0;color:#9f9f9f}
+
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:linear-gradient(145deg,#111,#080808);border:1px solid #282828;border-top:3px solid #b20000;padding:26px;min-height:220px}
+    .card h3{font-size:1.45rem;margin-bottom:11px}
+    .card p{color:#b0b0b0}
+    .eyebrow{display:block;margin-top:17px;color:#d61111;text-transform:uppercase;font-weight:800;font-size:.85rem;letter-spacing:1px}
+
+    .split{display:grid;grid-template-columns:1.12fr .88fr;gap:22px}
+    .panel{background:#0d0d0d;border:1px solid #2a2a2a;padding:28px}
+    .panel h3{font-size:clamp(2rem,6vw,2.9rem);margin-bottom:15px}
+    .panel p{color:#b8b8b8;margin-bottom:14px}
+    .spec{padding:13px 0;border-bottom:1px solid #262626;color:#c9c9c9}
+    .spec:last-child{border-bottom:0}
+    .spec strong{color:#d61111}
+
+    .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .price-card{background:#0c0c0c;border:1px solid #292929;padding:28px;text-align:center}
+    .price-card.featured{border-color:#9f1515;box-shadow:inset 0 3px 0 #c51515}
+    .price-card h3{text-transform:uppercase;font-size:1.1rem;letter-spacing:.8px}
+    .price{font-size:clamp(2.3rem,7vw,3.6rem);font-weight:900;margin:10px 0;color:#fff}
+    .price-card p{color:#aaa}
+    .price-note{text-align:center;color:#8e8e8e;margin-top:18px;font-size:.94rem}
+
+    .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+    .gallery-card{background:#0a0a0a;border:1px solid #272727;overflow:hidden}
+    .gallery-media{background:#000;display:flex;align-items:center;justify-content:center;padding:10px}
+    .gallery-media img{width:100%;height:auto;max-height:780px;object-fit:contain;object-position:center;background:#000}
+    .gallery-copy{padding:20px}
+    .gallery-copy h4{text-transform:uppercase;letter-spacing:.8px;font-size:1.08rem;margin-bottom:6px}
+    .gallery-copy p{color:#cfcfcf}
+
+    .data-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:24px;align-items:center}
+    .data-copy{border-left:4px solid #b20000;padding-left:22px}
+    .data-copy h3{font-size:clamp(2rem,7vw,3rem);text-transform:uppercase;line-height:1.06;margin-bottom:16px}
+    .data-copy p{color:#b6b6b6;margin-bottom:14px}
+    .spectro-crop{height:720px;overflow:hidden;background:#000;border:1px solid #272727;position:relative}
+    .spectro-crop img{
+      width:100%;
+      height:820px;
+      object-fit:cover;
+      object-position:center 57%;
+      transform:translateY(-56px);
+      background:#000
     }
 
-    .hero {
-      min-height: 100svh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 48px 20px;
-      text-align: center;
-      border-bottom: 2px solid #a80000;
-    }
-    .hero-card {
-      width: min(940px, 100%);
-      padding: 38px 24px;
-      background: rgba(0,0,0,.48);
-      border: 1px solid rgba(255,255,255,.09);
-      backdrop-filter: blur(5px);
-      box-shadow: 0 22px 60px rgba(0,0,0,.35);
-    }
-    .logo {
-      display: block;
-      width: min(620px, 92%);
-      max-height: 230px;
-      object-fit: contain;
-      margin: 0 auto 18px;
-    }
-    h1 {
-      font-size: clamp(2.2rem, 8vw, 5.3rem);
-      line-height: 1;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #e5e5e5;
-    }
-    .red { color: #d20b0b; }
-    .tagline {
-      margin-top: 14px;
-      color: #c8c8c8;
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      font-size: clamp(.8rem, 2.5vw, 1.08rem);
-    }
-    .hero-copy {
-      max-width: 760px;
-      margin: 26px auto 0;
-      color: #d1d1d1;
-      font-size: 1.08rem;
-    }
-    .buttons { margin-top: 28px; }
-    .button {
-      display: inline-block;
-      padding: 13px 21px;
-      margin: 7px;
-      border: 1px solid #d20b0b;
-      background: #a60000;
-      color: #fff;
-      text-decoration: none;
-      font-weight: 800;
-      letter-spacing: .7px;
-      text-transform: uppercase;
-    }
-    .button.secondary {
-      background: rgba(0,0,0,.35);
-      border-color: #777;
-    }
+    .truck-section{padding:72px 18px;background:#050505}
+    .truck-frame{position:relative;width:min(1140px,100%);margin:auto;overflow:hidden;border:1px solid #282828;background:#000}
+    .truck-frame img{width:100%;height:auto;object-fit:contain;background:#000}
+    .truck-shade{position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,.08),rgba(0,0,0,.56))}
+    .truck-copy{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:18px;text-align:center}
+    .truck-copy-box{width:min(830px,100%);background:rgba(0,0,0,.50);border:1px solid rgba(255,255,255,.09);padding:28px 22px;backdrop-filter:blur(3px)}
+    .truck-copy-box h2{font-size:clamp(2rem,8vw,4rem);text-transform:uppercase;line-height:1.04}
+    .truck-copy-box p{margin-top:13px;color:#ddd}
 
-    main { position: relative; z-index: 2; background: #050505; }
-    section { padding: 78px 20px; }
-    .inner { width: min(1140px, 100%); margin: 0 auto; }
-    .section-title { text-align: center; margin-bottom: 40px; }
-    .section-title h2 {
-      font-size: clamp(2rem, 6vw, 3rem);
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-    }
-    .section-title p {
-      color: #989898;
-      margin: 8px auto 0;
-      max-width: 760px;
-    }
+    footer{background:#000;text-align:center;padding:40px 18px;border-top:2px solid #a80000}
+    footer h2{text-transform:uppercase;letter-spacing:2px}
+    footer p{color:#777;margin-top:8px}
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-    .card {
-      padding: 28px;
-      min-height: 240px;
-      background: linear-gradient(145deg,#111,#070707);
-      border: 1px solid #252525;
-      border-top: 3px solid #b30000;
-    }
-    .card h3 { margin-bottom: 12px; font-size: 1.45rem; }
-    .card p { color: #ababab; }
-    .eyebrow {
-      display: block;
-      margin-top: 18px;
-      color: #d20b0b;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: .86rem;
-    }
-
-    .laminar-section {
-      background: #090909;
-      border-top: 1px solid #202020;
-      border-bottom: 1px solid #202020;
-    }
-    .split {
-      display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 24px;
-      align-items: stretch;
-    }
-    .panel {
-      background: #0d0d0d;
-      border: 1px solid #292929;
-      padding: 30px;
-    }
-    .panel h3 {
-      font-size: clamp(2rem, 6vw, 2.7rem);
-      margin-bottom: 15px;
-    }
-    .panel p { color: #b2b2b2; margin-bottom: 14px; }
-    .spec {
-      padding: 12px 0;
-      border-bottom: 1px solid #262626;
-      color: #c4c4c4;
-    }
-    .spec:last-child { border-bottom: 0; }
-    .spec strong { color: #d20b0b; }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
-    .photo {
-      position: relative;
-      min-height: 390px;
-      overflow: hidden;
-      background:
-        linear-gradient(145deg,#171717,#080808);
-      border: 1px solid #282828;
-    }
-    .photo img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .photo::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,.05) 60%);
-      pointer-events: none;
-    }
-    .caption {
-      position: absolute;
-      z-index: 2;
-      left: 20px;
-      right: 20px;
-      bottom: 18px;
-    }
-    .caption h4 {
-      font-size: 1.25rem;
-      text-transform: uppercase;
-      letter-spacing: .7px;
-    }
-    .caption p { color: #cfcfcf; font-size: .95rem; margin-top: 4px; }
-
-    .data-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      align-items: center;
-    }
-    .data-copy {
-      border-left: 4px solid #b30000;
-      padding-left: 24px;
-    }
-    .data-copy h3 {
-      font-size: clamp(2rem, 6vw, 3rem);
-      line-height: 1.08;
-      text-transform: uppercase;
-      margin-bottom: 15px;
-    }
-    .data-copy p { color: #b6b6b6; margin-bottom: 14px; }
-    .data-image {
-      position: relative;
-      min-height: 520px;
-      overflow: hidden;
-      background: #090909;
-      border: 1px solid #282828;
-    }
-    .data-image img {
-      width: 100%;
-      height: 100%;
-      min-height: 520px;
-      object-fit: contain;
-      display: block;
-    }
-
-    .fixed-band {
-      min-height: 62vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 60px 20px;
-      text-align: center;
-      background:
-        linear-gradient(rgba(0,0,0,.48),rgba(0,0,0,.78)),
-        url('truck-profile-fixed.jpg') center center / cover no-repeat;
-      background-attachment: fixed;
-      border-top: 1px solid #222;
-      border-bottom: 1px solid #222;
-    }
-    .fixed-band div {
-      width: min(780px,100%);
-      padding: 32px 22px;
-      background: rgba(0,0,0,.45);
-      border: 1px solid rgba(255,255,255,.09);
-      backdrop-filter: blur(4px);
-    }
-    .fixed-band h2 {
-      font-size: clamp(2rem, 7vw, 3.6rem);
-      text-transform: uppercase;
-      line-height: 1.05;
-    }
-    .fixed-band p { color: #d0d0d0; margin-top: 12px; }
-
-    footer {
-      background: #000;
-      text-align: center;
-      padding: 42px 20px;
-      border-top: 2px solid #a80000;
-    }
-    footer h2 {
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #ddd;
-    }
-    footer p { color: #777; margin-top: 8px; }
-
-    @media (max-width: 850px) {
-      .cards, .split, .gallery, .data-grid { grid-template-columns: 1fr; }
-      .photo { min-height: 430px; }
-      .fixed-band { background-attachment: scroll; }
-      .hero-card { padding: 30px 18px; }
+    @media(min-width:901px){.hero{background-attachment:fixed}}
+    @media(max-width:900px){
+      .cards,.split,.pricing-grid,.gallery,.data-grid{grid-template-columns:1fr}
+      .logo-window{height:125px}
+      .spectro-crop{height:690px}
+      .spectro-crop img{height:790px;transform:translateY(-50px)}
     }
   </style>
 </head>
-
 <body>
-  <div class="hero-bg"></div>
-  <div class="hero-shade"></div>
 
   <header class="hero">
     <div class="hero-card">
-      <img src="logo.jpg" alt="Dayberry Blueprinting logo" class="logo"
-           onerror="this.style.display='none'">
-
+      <div class="logo-window">
+        <img src="logo.jpg" alt="Dayberry Blueprinting logo">
+      </div>
       <h1>Dayberry <span class="red">Blueprinting</span></h1>
       <div class="tagline">Not Assembled. Engineered.</div>
-
       <p class="hero-copy">
-        Rotary engine blueprinting, performance fabrication and real-world
-        development backed by testing, measurements and data.
+        Rotary engine blueprinting, performance fabrication and real-world development backed by testing, measurements and data.
       </p>
-
-      <div class="buttons">
+      <div class="hero-buttons">
         <a class="button" href="#laminar30">Laminar30</a>
         <a class="button secondary" href="#build-gallery">Build Photos</a>
       </div>
@@ -320,59 +183,41 @@
           <h2>Built Through <span class="red">Testing</span></h2>
           <p>Real parts. Real vehicles. Multiple configurations. Actual data.</p>
         </div>
-
         <div class="cards">
           <article class="card">
             <h3>Rotary Blueprinting</h3>
-            <p>Precision Mazda rotary engine preparation focused on clearances,
-               component selection, reliability and high-RPM performance.</p>
+            <p>Precision Mazda rotary engine preparation focused on clearances, component selection, reliability and high-RPM performance.</p>
             <span class="eyebrow">Mazda Rotary</span>
           </article>
-
           <article class="card">
             <h3>Laminar30</h3>
-            <p>Stainless exhaust-flow development tested through WOT pulls,
-               cruise behavior, deceleration testing and acoustic analysis.</p>
+            <p>Stainless exhaust-flow development tested through WOT pulls, cruise behavior, deceleration testing and acoustic analysis.</p>
             <span class="eyebrow">Exhaust Development</span>
           </article>
-
           <article class="card">
             <h3>Vehicle Development</h3>
-            <p>Hands-on testing using real street and performance vehicles to
-               compare sound, response, flow behavior and drivability.</p>
+            <p>Hands-on testing using real street and performance vehicles to compare sound, response, flow behavior and drivability.</p>
             <span class="eyebrow">Hands-On R&amp;D</span>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="laminar-section" id="laminar30">
+    <section class="dark" id="laminar30">
       <div class="inner">
         <div class="split">
           <div class="panel">
             <h3>LAMINAR<span class="red">30</span></h3>
-            <p>
-              The Laminar30 is not a conventional muffler. It was developed through
-              repeated exhaust configurations and real-world testing to change the
-              character of the exhaust without simply choking sound away.
-            </p>
-            <p>
-              Testing has included wide-open-throttle acceleration, cruise behavior,
-              throttle-lift/deceleration characteristics and spectrograph analysis.
-            </p>
-            <p>
-              The result in testing has been a strong, clean exhaust note with reduced
-              rasp and exhaust ringing, while remaining surprisingly quiet during cruise
-              and off-throttle operation.
-            </p>
+            <p>The Laminar30 is not a conventional muffler. It was developed through repeated exhaust configurations and real-world testing to change the character of the exhaust without simply choking sound away.</p>
+            <p>Testing has included wide-open-throttle acceleration, cruise behavior, throttle-lift/deceleration characteristics and spectrograph analysis.</p>
+            <p>The result in testing has been a strong, clean exhaust note with reduced rasp and exhaust ringing, while remaining surprisingly quiet during cruise and off-throttle operation.</p>
           </div>
-
           <div class="panel">
-            <div class="spec"><strong>Construction:</strong> Heavy-duty stainless steel</div>
+            <div class="spec"><strong>Construction:</strong> 16-gauge stainless steel</div>
+            <div class="spec"><strong>Welding:</strong> TIG welded • back-purged</div>
             <div class="spec"><strong>Inlet:</strong> 3 inch</div>
             <div class="spec"><strong>Outlet:</strong> 3 inch</div>
-            <div class="spec"><strong>Total length:</strong> Approximately 30 inches</div>
-            <div class="spec"><strong>Fabrication:</strong> TIG welded</div>
+            <div class="spec"><strong>Total length:</strong> Approximately 30 inches each</div>
             <div class="spec"><strong>Testing:</strong> WOT, cruise, decel + frequency analysis</div>
             <div class="spec"><strong>Development:</strong> Dayberry Blueprinting</div>
           </div>
@@ -380,93 +225,107 @@
       </div>
     </section>
 
-    <section id="build-gallery">
+    <section id="pricing">
+      <div class="inner">
+        <div class="section-title">
+          <h2>Laminar30 <span class="red">Pricing</span></h2>
+          <p>Dual 3-inch stainless Laminar30 set. Built and TIG welded as a pair.</p>
+        </div>
+        <div class="pricing-grid">
+          <div class="price-card featured">
+            <h3>Dual Laminar30 Set</h3>
+            <div class="price">$1,350</div>
+            <p>Pair without V-band hardware.</p>
+          </div>
+          <div class="price-card">
+            <h3>Welded 3" V-Band Option</h3>
+            <div class="price">+$100</div>
+            <p>Optional welded V-band setup.</p>
+          </div>
+          <div class="price-card">
+            <h3>Complete With V-Bands</h3>
+            <div class="price">$1,450</div>
+            <p>Laminar30 pair with welded V-band setup.</p>
+          </div>
+        </div>
+        <p class="price-note">Shipping additional. Built to order.</p>
+      </div>
+    </section>
+
+    <section class="dark" id="build-gallery">
       <div class="inner">
         <div class="section-title">
           <h2>Laminar30 <span class="red">Development</span></h2>
-          <p>Fabrication, internal geometry, installed testing and finished components.</p>
+          <p>Fabrication, installed testing and finished components.</p>
         </div>
-
         <div class="gallery">
-          <figure class="photo">
-            <img src="laminar-build-1.jpg" alt="Finished Dayberry Blueprinting Laminar30 pair"
-                 onerror="this.style.display='none'">
-            <figcaption class="caption">
+          <figure class="gallery-card">
+            <div class="gallery-media">
+              <img src="laminar-build-1.jpg" alt="Finished Dayberry Blueprinting Laminar30 pair">
+            </div>
+            <figcaption class="gallery-copy">
               <h4>Finished Pair</h4>
               <p>Stainless Laminar30 development pieces with DB branding.</p>
             </figcaption>
           </figure>
 
-          <figure class="photo">
-            <img src="laminar-build-2.jpg" alt="Laminar30 stainless fabrication"
-                 onerror="this.style.display='none'">
-            <figcaption class="caption">
-              <h4>Fabrication</h4>
-              <p>Full-length stainless sections during the build process.</p>
+          <figure class="gallery-card">
+            <div class="gallery-media">
+              <img src="laminar-build-2.jpg" alt="Full length Laminar30 stainless fabrication">
+            </div>
+            <figcaption class="gallery-copy">
+              <h4>Full-Length Fabrication</h4>
+              <p>Real full-length stainless sections during the build process.</p>
             </figcaption>
           </figure>
 
-          <figure class="photo">
-            <img src="laminar-installed.jpg" alt="Laminar30 system installed under GMC Sierra"
-                 onerror="this.style.display='none'">
-            <figcaption class="caption">
+          <figure class="gallery-card">
+            <div class="gallery-media">
+              <img src="laminar-installed.jpg" alt="Laminar30 installed under GMC Sierra">
+            </div>
+            <figcaption class="gallery-copy">
               <h4>Installed Testing</h4>
               <p>Real-world under-truck configuration used during exhaust testing.</p>
             </figcaption>
           </figure>
 
-          <figure class="photo">
-            <img src="laminar-flanges-fixed.jpg" alt="Close-up of Laminar30 end flanges"
-                 onerror="this.style.display='none'">
-            <figcaption class="caption">
+          <figure class="gallery-card">
+            <div class="gallery-media">
+              <img src="laminar-flanges-fixed.jpg" alt="Finished Laminar30 V-band end flanges">
+            </div>
+            <figcaption class="gallery-copy">
               <h4>End Detail</h4>
-              <p>Close-up of the finished end sections and transition geometry.</p>
+              <p>Finished V-band end sections and transition geometry.</p>
             </figcaption>
           </figure>
         </div>
       </div>
     </section>
 
-    <section class="laminar-section">
+    <section>
       <div class="inner">
         <div class="data-grid">
           <div class="data-copy">
             <h3>We’ve Got <span class="red">Data.</span></h3>
-            <p>
-              Development is being compared across multiple exhaust configurations,
-              including Laminar30 + Super 10 axle-back, Laminar30-only testing and the
-              Flowmaster baseline.
-            </p>
-            <p>
-              Spectrograph analysis makes the WOT sections, shift events and quiet
-              deceleration behavior visible instead of relying on somebody saying,
-              “trust me, bro.” A surprisingly persistent engineering standard.
-            </p>
+            <p>Development is being compared across multiple exhaust configurations, including Laminar30 + Super 10 axle-back, Laminar30-only testing and the Flowmaster baseline.</p>
+            <p>Spectrograph analysis makes the WOT sections, shift events and quiet deceleration behavior visible instead of relying only on subjective sound descriptions.</p>
           </div>
-
-          <div class="data-image">
-            <img src="spectrogram.jpg" alt="Laminar30 exhaust spectrograph comparison"
-                 onerror="this.style.display='none'">
+          <div class="spectro-crop">
+            <img src="spectrogram.jpg" alt="Laminar30 exhaust spectrograph comparison">
           </div>
         </div>
       </div>
     </section>
 
-    <div class="fixed-band">
-      <div>
-        <h2>Not Assembled. <span class="red">Engineered.</span></h2>
-        <p>
-          Dayberry Blueprinting combines fabrication, experimentation and actual
-          vehicle testing instead of treating performance parts like decorative jewelry.
-        </p>
-      </div>
-    </div>
-
-    <section>
-      <div class="inner">
-        <div class="section-title">
-          <h2>Dayberry <span class="red">Blueprinting</span></h2>
-          <p>Rotary engines • performance development • fabrication • testing</p>
+    <section class="truck-section">
+      <div class="truck-frame">
+        <img src="truck-profile-fixed.jpg" alt="Black GMC Sierra side profile">
+        <div class="truck-shade"></div>
+        <div class="truck-copy">
+          <div class="truck-copy-box">
+            <h2>Not Assembled. <span class="red">Engineered.</span></h2>
+            <p>Dayberry Blueprinting combines fabrication, experimentation and actual vehicle testing instead of treating performance parts like decorative jewelry.</p>
+          </div>
         </div>
       </div>
     </section>
