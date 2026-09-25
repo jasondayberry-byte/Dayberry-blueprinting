@@ -19,9 +19,13 @@
       align-items:center;
       justify-content:center;
       padding:42px 18px;
-      background:
-        linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.78)),
-        url('hero-engine-bay.jpg') center 52%/cover no-repeat;
+      background-color:#000;
+      background-image:
+        linear-gradient(rgba(0,0,0,.30),rgba(0,0,0,.70)),
+        url('hero-engine-bay.jpg');
+      background-repeat:no-repeat;
+      background-position:center 50%;
+      background-size:245% auto;
       border-bottom:2px solid #a80000
     }
     .hero-card{
@@ -43,7 +47,7 @@
       width:100%;
       height:100%;
       object-fit:cover;
-      object-position:center 67%
+      object-position:center 51%
     }
     h1{
       font-size:clamp(2.35rem,8vw,5.2rem);
@@ -147,9 +151,19 @@
     footer h2{text-transform:uppercase;letter-spacing:2px}
     footer p{color:#777;margin-top:8px}
 
-    @media(min-width:901px){.hero{background-attachment:fixed}}
+    @media(min-width:901px){
+      .hero{
+        background-size:170% auto;
+        background-position:center 50%;
+        background-attachment:fixed
+      }
+    }
     @media(max-width:900px){
       .cards,.split,.pricing-grid,.gallery,.data-grid{grid-template-columns:1fr}
+      .hero{
+        background-size:245% auto;
+        background-position:center 50%;
+      }
       .logo-window{height:125px}
       .spectro-crop{height:690px}
       .spectro-crop img{height:790px;transform:translateY(-50px)}
