@@ -3,427 +3,479 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Dayberry Blueprinting</title>
-
+  <meta name="theme-color" content="#050505">
+  <title>Dayberry Blueprinting | Not Assembled. Engineered.</title>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
       background: #050505;
-      color: #f1f1f1;
+      color: #f4f4f4;
       font-family: Arial, Helvetica, sans-serif;
       line-height: 1.6;
+      overflow-x: hidden;
     }
+    a { color: inherit; }
 
-    header {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px 20px;
+    .hero-bg {
+      position: fixed;
+      inset: 0;
+      z-index: -3;
       background:
-        radial-gradient(circle at center, #251010 0%, #080808 45%, #000 100%);
-      border-bottom: 2px solid #b40000;
+        linear-gradient(rgba(0,0,0,.48), rgba(0,0,0,.82)),
+        url('hero-engine-bay.jpg') center center / cover no-repeat;
+    }
+    .hero-shade {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background:
+        radial-gradient(circle at 50% 35%, rgba(180,0,0,.13), transparent 40%),
+        linear-gradient(to bottom, rgba(0,0,0,.05), rgba(0,0,0,.58));
     }
 
     .hero {
-      max-width: 900px;
-    }
-
-    .logo {
-      max-width: 520px;
-      width: 90%;
-      margin-bottom: 25px;
-    }
-
-    h1 {
-      font-size: clamp(2.5rem, 8vw, 5.5rem);
-      letter-spacing: 4px;
-      color: #d8d8d8;
-      text-transform: uppercase;
-    }
-
-    .red {
-      color: #d00000;
-    }
-
-    .tagline {
-      margin-top: 10px;
-      font-size: 1.1rem;
-      letter-spacing: 5px;
-      color: #aaa;
-      text-transform: uppercase;
-    }
-
-    .hero p {
-      max-width: 700px;
-      margin: 30px auto;
-      color: #c8c8c8;
-      font-size: 1.15rem;
-    }
-
-    .button {
-      display: inline-block;
-      margin: 8px;
-      padding: 14px 24px;
-      background: #b40000;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      text-transform: uppercase;
-      border: 1px solid #e00000;
-      transition: 0.2s;
-    }
-
-    .button:hover {
-      background: #e00000;
-      transform: translateY(-2px);
-    }
-
-    .button.secondary {
-      background: transparent;
-      border: 1px solid #777;
-    }
-
-    section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 80px 20px;
-    }
-
-    .section-title {
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 20px;
       text-align: center;
-      margin-bottom: 45px;
+      border-bottom: 2px solid #a80000;
     }
-
-    .section-title h2 {
-      font-size: 2.3rem;
+    .hero-card {
+      width: min(940px, 100%);
+      padding: 38px 24px;
+      background: rgba(0,0,0,.48);
+      border: 1px solid rgba(255,255,255,.09);
+      backdrop-filter: blur(5px);
+      box-shadow: 0 22px 60px rgba(0,0,0,.35);
+    }
+    .logo {
+      display: block;
+      width: min(620px, 92%);
+      max-height: 230px;
+      object-fit: contain;
+      margin: 0 auto 18px;
+    }
+    h1 {
+      font-size: clamp(2.2rem, 8vw, 5.3rem);
+      line-height: 1;
       text-transform: uppercase;
       letter-spacing: 2px;
+      color: #e5e5e5;
+    }
+    .red { color: #d20b0b; }
+    .tagline {
+      margin-top: 14px;
+      color: #c8c8c8;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: clamp(.8rem, 2.5vw, 1.08rem);
+    }
+    .hero-copy {
+      max-width: 760px;
+      margin: 26px auto 0;
+      color: #d1d1d1;
+      font-size: 1.08rem;
+    }
+    .buttons { margin-top: 28px; }
+    .button {
+      display: inline-block;
+      padding: 13px 21px;
+      margin: 7px;
+      border: 1px solid #d20b0b;
+      background: #a60000;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: .7px;
+      text-transform: uppercase;
+    }
+    .button.secondary {
+      background: rgba(0,0,0,.35);
+      border-color: #777;
     }
 
-    .section-title span {
-      color: #d00000;
+    main { position: relative; z-index: 2; background: #050505; }
+    section { padding: 78px 20px; }
+    .inner { width: min(1140px, 100%); margin: 0 auto; }
+    .section-title { text-align: center; margin-bottom: 40px; }
+    .section-title h2 {
+      font-size: clamp(2rem, 6vw, 3rem);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
     }
-
     .section-title p {
-      color: #888;
-      margin-top: 8px;
+      color: #989898;
+      margin: 8px auto 0;
+      max-width: 760px;
     }
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
     }
-
     .card {
-      background: linear-gradient(145deg, #111, #090909);
-      border: 1px solid #292929;
-      border-top: 3px solid #b40000;
       padding: 28px;
-      min-height: 260px;
+      min-height: 240px;
+      background: linear-gradient(145deg,#111,#070707);
+      border: 1px solid #252525;
+      border-top: 3px solid #b30000;
     }
-
-    .card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 12px;
-      color: #eee;
-    }
-
-    .card p {
-      color: #aaa;
-    }
-
-    .card .small {
+    .card h3 { margin-bottom: 12px; font-size: 1.45rem; }
+    .card p { color: #ababab; }
+    .eyebrow {
       display: block;
       margin-top: 18px;
-      color: #d00000;
-      font-weight: bold;
+      color: #d20b0b;
+      font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 1px;
+      font-size: .86rem;
     }
 
-    .laminar {
+    .laminar-section {
       background: #090909;
-      border-top: 1px solid #222;
-      border-bottom: 1px solid #222;
-      max-width: none;
+      border-top: 1px solid #202020;
+      border-bottom: 1px solid #202020;
     }
-
-    .laminar-inner {
-      max-width: 1100px;
-      margin: auto;
-      padding: 80px 20px;
+    .split {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 24px;
+      align-items: stretch;
     }
+    .panel {
+      background: #0d0d0d;
+      border: 1px solid #292929;
+      padding: 30px;
+    }
+    .panel h3 {
+      font-size: clamp(2rem, 6vw, 2.7rem);
+      margin-bottom: 15px;
+    }
+    .panel p { color: #b2b2b2; margin-bottom: 14px; }
+    .spec {
+      padding: 12px 0;
+      border-bottom: 1px solid #262626;
+      color: #c4c4c4;
+    }
+    .spec:last-child { border-bottom: 0; }
+    .spec strong { color: #d20b0b; }
 
-    .laminar-grid {
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+    .photo {
+      position: relative;
+      min-height: 390px;
+      overflow: hidden;
+      background:
+        linear-gradient(145deg,#171717,#080808);
+      border: 1px solid #282828;
+    }
+    .photo img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .photo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,.05) 60%);
+      pointer-events: none;
+    }
+    .caption {
+      position: absolute;
+      z-index: 2;
+      left: 20px;
+      right: 20px;
+      bottom: 18px;
+    }
+    .caption h4 {
+      font-size: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: .7px;
+    }
+    .caption p { color: #cfcfcf; font-size: .95rem; margin-top: 4px; }
+
+    .data-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 50px;
+      gap: 24px;
       align-items: center;
     }
-
-    .laminar-box {
-      border-left: 4px solid #b40000;
-      padding-left: 25px;
+    .data-copy {
+      border-left: 4px solid #b30000;
+      padding-left: 24px;
     }
-
-    .laminar h2 {
-      font-size: 2.5rem;
+    .data-copy h3 {
+      font-size: clamp(2rem, 6vw, 3rem);
+      line-height: 1.08;
+      text-transform: uppercase;
       margin-bottom: 15px;
     }
-
-    .laminar p {
-      color: #aaa;
-      margin-bottom: 15px;
+    .data-copy p { color: #b6b6b6; margin-bottom: 14px; }
+    .data-image {
+      position: relative;
+      min-height: 520px;
+      overflow: hidden;
+      background: #090909;
+      border: 1px solid #282828;
+    }
+    .data-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 520px;
+      object-fit: contain;
+      display: block;
     }
 
-    .specs {
-      background: #111;
-      border: 1px solid #333;
-      padding: 25px;
+    .fixed-band {
+      min-height: 62vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+      text-align: center;
+      background:
+        linear-gradient(rgba(0,0,0,.48),rgba(0,0,0,.78)),
+        url('truck-profile.jpg') center center / cover no-repeat;
+      background-attachment: fixed;
+      border-top: 1px solid #222;
+      border-bottom: 1px solid #222;
     }
-
-    .spec {
-      padding: 10px 0;
-      border-bottom: 1px solid #292929;
+    .fixed-band div {
+      width: min(780px,100%);
+      padding: 32px 22px;
+      background: rgba(0,0,0,.45);
+      border: 1px solid rgba(255,255,255,.09);
+      backdrop-filter: blur(4px);
     }
-
-    .spec:last-child {
-      border-bottom: none;
+    .fixed-band h2 {
+      font-size: clamp(2rem, 7vw, 3.6rem);
+      text-transform: uppercase;
+      line-height: 1.05;
     }
-
-    .spec strong {
-      color: #d00000;
-    }
+    .fixed-band p { color: #d0d0d0; margin-top: 12px; }
 
     footer {
       background: #000;
       text-align: center;
-      padding: 40px 20px;
-      border-top: 2px solid #b40000;
+      padding: 42px 20px;
+      border-top: 2px solid #a80000;
     }
-
     footer h2 {
-      color: #ddd;
-      letter-spacing: 2px;
       text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #ddd;
     }
+    footer p { color: #777; margin-top: 8px; }
 
-    footer p {
-      color: #777;
-      margin-top: 10px;
-    }
-
-    @media (max-width: 750px) {
-      .laminar-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .tagline {
-        letter-spacing: 2px;
-      }
+    @media (max-width: 850px) {
+      .cards, .split, .gallery, .data-grid { grid-template-columns: 1fr; }
+      .photo { min-height: 430px; }
+      .fixed-band { background-attachment: scroll; }
+      .hero-card { padding: 30px 18px; }
     }
   </style>
 </head>
 
 <body>
+  <div class="hero-bg"></div>
+  <div class="hero-shade"></div>
 
-<header>
-  <div class="hero">
+  <header class="hero">
+    <div class="hero-card">
+      <img src="logo.jpg" alt="Dayberry Blueprinting logo" class="logo"
+           onerror="this.style.display='none'">
 
-    <img
-      src="logo.png"
-      alt="Dayberry Blueprinting"
-      class="logo"
-      onerror="this.style.display='none'"
-    >
+      <h1>Dayberry <span class="red">Blueprinting</span></h1>
+      <div class="tagline">Not Assembled. Engineered.</div>
 
-    <h1>DAYBERRY <span class="red">BLUEPRINTING</span></h1>
-
-    <div class="tagline">
-      NOT ASSEMBLED. ENGINEERED.
-    </div>
-
-    <p>
-      Performance development, rotary engine blueprinting,
-      fabrication and real-world component testing.
-      Built from hands-on testing, measurements and data.
-    </p>
-
-    <a href="#projects" class="button">
-      Our Projects
-    </a>
-
-    <a href="#laminar30" class="button secondary">
-      Laminar30
-    </a>
-
-  </div>
-</header>
-
-<section id="projects">
-
-  <div class="section-title">
-    <h2>Built Through <span>Testing</span></h2>
-    <p>
-      Development backed by real parts, real vehicles and real data.
-    </p>
-  </div>
-
-  <div class="cards">
-
-    <div class="card">
-      <h3>Rotary Blueprinting</h3>
-
-      <p>
-        Precision Mazda rotary engine preparation focused on
-        clearances, component selection, reliability and
-        high-RPM performance.
+      <p class="hero-copy">
+        Rotary engine blueprinting, performance fabrication and real-world
+        development backed by testing, measurements and data.
       </p>
 
-      <span class="small">
-        Mazda Rotary
-      </span>
-    </div>
-
-    <div class="card">
-      <h3>Laminar30</h3>
-
-      <p>
-        A stainless exhaust-flow development created through
-        repeated configuration testing, wide-open-throttle pulls,
-        deceleration testing and acoustic analysis.
-      </p>
-
-      <span class="small">
-        Exhaust Development
-      </span>
-    </div>
-
-    <div class="card">
-      <h3>FD RX-7 Development</h3>
-
-      <p>
-        Component testing and development for the third-generation
-        Mazda RX-7, including drivetrain, shifter and engine systems.
-      </p>
-
-      <span class="small">
-        FD3S
-      </span>
-    </div>
-
-  </div>
-</section>
-
-<div class="laminar" id="laminar30">
-
-  <div class="laminar-inner">
-
-    <div class="laminar-grid">
-
-      <div class="laminar-box">
-
-        <h2>
-          LAMINAR<span class="red">30</span>
-        </h2>
-
-        <p>
-          The Laminar30 was developed by Dayberry Blueprinting
-          through multiple exhaust configurations rather than
-          simply choosing a muffler from a catalog.
-        </p>
-
-        <p>
-          Testing has included wide-open-throttle acceleration,
-          cruise behavior, deceleration characteristics and
-          frequency analysis.
-        </p>
-
-        <p>
-          Designed for a strong, clean exhaust note while reducing
-          unwanted rasp and exhaust ringing.
-        </p>
-
+      <div class="buttons">
+        <a class="button" href="#laminar30">Laminar30</a>
+        <a class="button secondary" href="#build-gallery">Build Photos</a>
       </div>
+    </div>
+  </header>
 
-      <div class="specs">
-
-        <div class="spec">
-          <strong>Construction:</strong>
-          Stainless Steel
+  <main>
+    <section>
+      <div class="inner">
+        <div class="section-title">
+          <h2>Built Through <span class="red">Testing</span></h2>
+          <p>Real parts. Real vehicles. Multiple configurations. Actual data.</p>
         </div>
 
-        <div class="spec">
-          <strong>Inlet:</strong>
-          3 inch
-        </div>
+        <div class="cards">
+          <article class="card">
+            <h3>Rotary Blueprinting</h3>
+            <p>Precision Mazda rotary engine preparation focused on clearances,
+               component selection, reliability and high-RPM performance.</p>
+            <span class="eyebrow">Mazda Rotary</span>
+          </article>
 
-        <div class="spec">
-          <strong>Outlet:</strong>
-          3 inch
-        </div>
+          <article class="card">
+            <h3>Laminar30</h3>
+            <p>Stainless exhaust-flow development tested through WOT pulls,
+               cruise behavior, deceleration testing and acoustic analysis.</p>
+            <span class="eyebrow">Exhaust Development</span>
+          </article>
 
-        <div class="spec">
-          <strong>Total Length:</strong>
-          Approximately 30 inches
+          <article class="card">
+            <h3>Vehicle Development</h3>
+            <p>Hands-on testing using real street and performance vehicles to
+               compare sound, response, flow behavior and drivability.</p>
+            <span class="eyebrow">Hands-On R&amp;D</span>
+          </article>
         </div>
-
-        <div class="spec">
-          <strong>Fabrication:</strong>
-          TIG Welded
-        </div>
-
-        <div class="spec">
-          <strong>Development:</strong>
-          Dayberry Blueprinting
-        </div>
-
       </div>
+    </section>
 
+    <section class="laminar-section" id="laminar30">
+      <div class="inner">
+        <div class="split">
+          <div class="panel">
+            <h3>LAMINAR<span class="red">30</span></h3>
+            <p>
+              The Laminar30 is not a conventional muffler. It was developed through
+              repeated exhaust configurations and real-world testing to change the
+              character of the exhaust without simply choking sound away.
+            </p>
+            <p>
+              Testing has included wide-open-throttle acceleration, cruise behavior,
+              throttle-lift/deceleration characteristics and spectrograph analysis.
+            </p>
+            <p>
+              The result in testing has been a strong, clean exhaust note with reduced
+              rasp and exhaust ringing, while remaining surprisingly quiet during cruise
+              and off-throttle operation.
+            </p>
+          </div>
+
+          <div class="panel">
+            <div class="spec"><strong>Construction:</strong> Heavy-duty stainless steel</div>
+            <div class="spec"><strong>Inlet:</strong> 3 inch</div>
+            <div class="spec"><strong>Outlet:</strong> 3 inch</div>
+            <div class="spec"><strong>Total length:</strong> Approximately 30 inches</div>
+            <div class="spec"><strong>Fabrication:</strong> TIG welded</div>
+            <div class="spec"><strong>Testing:</strong> WOT, cruise, decel + frequency analysis</div>
+            <div class="spec"><strong>Development:</strong> Dayberry Blueprinting</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="build-gallery">
+      <div class="inner">
+        <div class="section-title">
+          <h2>Laminar30 <span class="red">Development</span></h2>
+          <p>Fabrication, internal geometry, installed testing and finished components.</p>
+        </div>
+
+        <div class="gallery">
+          <figure class="photo">
+            <img src="laminar-build-1.jpg" alt="Finished Dayberry Blueprinting Laminar30 pair"
+                 onerror="this.style.display='none'">
+            <figcaption class="caption">
+              <h4>Finished Pair</h4>
+              <p>Stainless Laminar30 development pieces with DB branding.</p>
+            </figcaption>
+          </figure>
+
+          <figure class="photo">
+            <img src="laminar-build-2.jpg" alt="Laminar30 stainless fabrication"
+                 onerror="this.style.display='none'">
+            <figcaption class="caption">
+              <h4>Fabrication</h4>
+              <p>Full-length stainless sections during the build process.</p>
+            </figcaption>
+          </figure>
+
+          <figure class="photo">
+            <img src="laminar-installed.jpg" alt="Laminar30 system installed under GMC Sierra"
+                 onerror="this.style.display='none'">
+            <figcaption class="caption">
+              <h4>Installed Testing</h4>
+              <p>Real-world under-truck configuration used during exhaust testing.</p>
+            </figcaption>
+          </figure>
+
+          <figure class="photo">
+            <img src="laminar-flanges.jpg" alt="Close-up of Laminar30 end flanges"
+                 onerror="this.style.display='none'">
+            <figcaption class="caption">
+              <h4>End Detail</h4>
+              <p>Close-up of the finished end sections and transition geometry.</p>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="laminar-section">
+      <div class="inner">
+        <div class="data-grid">
+          <div class="data-copy">
+            <h3>We’ve Got <span class="red">Data.</span></h3>
+            <p>
+              Development is being compared across multiple exhaust configurations,
+              including Laminar30 + Super 10 axle-back, Laminar30-only testing and the
+              Flowmaster baseline.
+            </p>
+            <p>
+              Spectrograph analysis makes the WOT sections, shift events and quiet
+              deceleration behavior visible instead of relying on somebody saying,
+              “trust me, bro.” A surprisingly persistent engineering standard.
+            </p>
+          </div>
+
+          <div class="data-image">
+            <img src="spectrogram.jpg" alt="Laminar30 exhaust spectrograph comparison"
+                 onerror="this.style.display='none'">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="fixed-band">
+      <div>
+        <h2>Not Assembled. <span class="red">Engineered.</span></h2>
+        <p>
+          Dayberry Blueprinting combines fabrication, experimentation and actual
+          vehicle testing instead of treating performance parts like decorative jewelry.
+        </p>
+      </div>
     </div>
 
-  </div>
+    <section>
+      <div class="inner">
+        <div class="section-title">
+          <h2>Dayberry <span class="red">Blueprinting</span></h2>
+          <p>Rotary engines • performance development • fabrication • testing</p>
+        </div>
+      </div>
+    </section>
+  </main>
 
-</div>
-
-<section>
-
-  <div class="section-title">
-
-    <h2>
-      Not Assembled. <span>Engineered.</span>
-    </h2>
-
-    <p>
-      Dayberry Blueprinting
-    </p>
-
-  </div>
-
-</section>
-
-<footer>
-
-  <h2>Dayberry Blueprinting</h2>
-
-  <p>
-    NOT ASSEMBLED. ENGINEERED.
-  </p>
-
-  <p>
-    © 2026 Dayberry Blueprinting
-  </p>
-
-</footer>
-
+  <footer>
+    <h2>Dayberry Blueprinting</h2>
+    <p>NOT ASSEMBLED. ENGINEERED.</p>
+    <p>© 2026 Dayberry Blueprinting</p>
+  </footer>
 </body>
 </html>
