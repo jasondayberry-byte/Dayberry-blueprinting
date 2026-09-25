@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Dayberry Blueprinting</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #050505;
+      color: #f1f1f1;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      background:
+        radial-gradient(circle at center, #251010 0%, #080808 45%, #000 100%);
+      border-bottom: 2px solid #b40000;
+    }
+
+    .hero {
+      max-width: 900px;
+    }
+
+    .logo {
+      max-width: 520px;
+      width: 90%;
+      margin-bottom: 25px;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 8vw, 5.5rem);
+      letter-spacing: 4px;
+      color: #d8d8d8;
+      text-transform: uppercase;
+    }
+
+    .red {
+      color: #d00000;
+    }
+
+    .tagline {
+      margin-top: 10px;
+      font-size: 1.1rem;
+      letter-spacing: 5px;
+      color: #aaa;
+      text-transform: uppercase;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 30px auto;
+      color: #c8c8c8;
+      font-size: 1.15rem;
+    }
+
+    .button {
+      display: inline-block;
+      margin: 8px;
+      padding: 14px 24px;
+      background: #b40000;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      border: 1px solid #e00000;
+      transition: 0.2s;
+    }
+
+    .button:hover {
+      background: #e00000;
+      transform: translateY(-2px);
+    }
+
+    .button.secondary {
+      background: transparent;
+      border: 1px solid #777;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 80px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 2.3rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .section-title span {
+      color: #d00000;
+    }
+
+    .section-title p {
+      color: #888;
+      margin-top: 8px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: linear-gradient(145deg, #111, #090909);
+      border: 1px solid #292929;
+      border-top: 3px solid #b40000;
+      padding: 28px;
+      min-height: 260px;
+    }
+
+    .card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      color: #eee;
+    }
+
+    .card p {
+      color: #aaa;
+    }
+
+    .card .small {
+      display: block;
+      margin-top: 18px;
+      color: #d00000;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .laminar {
+      background: #090909;
+      border-top: 1px solid #222;
+      border-bottom: 1px solid #222;
+      max-width: none;
+    }
+
+    .laminar-inner {
+      max-width: 1100px;
+      margin: auto;
+      padding: 80px 20px;
+    }
+
+    .laminar-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .laminar-box {
+      border-left: 4px solid #b40000;
+      padding-left: 25px;
+    }
+
+    .laminar h2 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    .laminar p {
+      color: #aaa;
+      margin-bottom: 15px;
+    }
+
+    .specs {
+      background: #111;
+      border: 1px solid #333;
+      padding: 25px;
+    }
+
+    .spec {
+      padding: 10px 0;
+      border-bottom: 1px solid #292929;
+    }
+
+    .spec:last-child {
+      border-bottom: none;
+    }
+
+    .spec strong {
+      color: #d00000;
+    }
+
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 2px solid #b40000;
+    }
+
+    footer h2 {
+      color: #ddd;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    footer p {
+      color: #777;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 750px) {
+      .laminar-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .tagline {
+        letter-spacing: 2px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="hero">
+
+    <img
+      src="logo.png"
+      alt="Dayberry Blueprinting"
+      class="logo"
+      onerror="this.style.display='none'"
+    >
+
+    <h1>DAYBERRY <span class="red">BLUEPRINTING</span></h1>
+
+    <div class="tagline">
+      NOT ASSEMBLED. ENGINEERED.
+    </div>
+
+    <p>
+      Performance development, rotary engine blueprinting,
+      fabrication and real-world component testing.
+      Built from hands-on testing, measurements and data.
+    </p>
+
+    <a href="#projects" class="button">
+      Our Projects
+    </a>
+
+    <a href="#laminar30" class="button secondary">
+      Laminar30
+    </a>
+
+  </div>
+</header>
+
+<section id="projects">
+
+  <div class="section-title">
+    <h2>Built Through <span>Testing</span></h2>
+    <p>
+      Development backed by real parts, real vehicles and real data.
+    </p>
+  </div>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>Rotary Blueprinting</h3>
+
+      <p>
+        Precision Mazda rotary engine preparation focused on
+        clearances, component selection, reliability and
+        high-RPM performance.
+      </p>
+
+      <span class="small">
+        Mazda Rotary
+      </span>
+    </div>
+
+    <div class="card">
+      <h3>Laminar30</h3>
+
+      <p>
+        A stainless exhaust-flow development created through
+        repeated configuration testing, wide-open-throttle pulls,
+        deceleration testing and acoustic analysis.
+      </p>
+
+      <span class="small">
+        Exhaust Development
+      </span>
+    </div>
+
+    <div class="card">
+      <h3>FD RX-7 Development</h3>
+
+      <p>
+        Component testing and development for the third-generation
+        Mazda RX-7, including drivetrain, shifter and engine systems.
+      </p>
+
+      <span class="small">
+        FD3S
+      </span>
+    </div>
+
+  </div>
+</section>
+
+<div class="laminar" id="laminar30">
+
+  <div class="laminar-inner">
+
+    <div class="laminar-grid">
+
+      <div class="laminar-box">
+
+        <h2>
+          LAMINAR<span class="red">30</span>
+        </h2>
+
+        <p>
+          The Laminar30 was developed by Dayberry Blueprinting
+          through multiple exhaust configurations rather than
+          simply choosing a muffler from a catalog.
+        </p>
+
+        <p>
+          Testing has included wide-open-throttle acceleration,
+          cruise behavior, deceleration characteristics and
+          frequency analysis.
+        </p>
+
+        <p>
+          Designed for a strong, clean exhaust note while reducing
+          unwanted rasp and exhaust ringing.
+        </p>
+
+      </div>
+
+      <div class="specs">
+
+        <div class="spec">
+          <strong>Construction:</strong>
+          Stainless Steel
+        </div>
+
+        <div class="spec">
+          <strong>Inlet:</strong>
+          3 inch
+        </div>
+
+        <div class="spec">
+          <strong>Outlet:</strong>
+          3 inch
+        </div>
+
+        <div class="spec">
+          <strong>Total Length:</strong>
+          Approximately 30 inches
+        </div>
+
+        <div class="spec">
+          <strong>Fabrication:</strong>
+          TIG Welded
+        </div>
+
+        <div class="spec">
+          <strong>Development:</strong>
+          Dayberry Blueprinting
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<section>
+
+  <div class="section-title">
+
+    <h2>
+      Not Assembled. <span>Engineered.</span>
+    </h2>
+
+    <p>
+      Dayberry Blueprinting
+    </p>
+
+  </div>
+
+</section>
+
+<footer>
+
+  <h2>Dayberry Blueprinting</h2>
+
+  <p>
+    NOT ASSEMBLED. ENGINEERED.
+  </p>
+
+  <p>
+    © 2026 Dayberry Blueprinting
+  </p>
+
+</footer>
+
+</body>
+</html>
