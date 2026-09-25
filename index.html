@@ -136,13 +136,12 @@
     }
 
     .truck-section{padding:72px 18px;background:#050505}
-    .truck-frame{position:relative;width:min(1140px,100%);margin:auto;overflow:hidden;border:1px solid #282828;background:#000}
-    .truck-frame img{width:100%;height:auto;object-fit:contain;background:#000}
-    .truck-shade{position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,.08),rgba(0,0,0,.56))}
-    .truck-copy{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:18px;text-align:center}
-    .truck-copy-box{width:min(830px,100%);background:rgba(0,0,0,.50);border:1px solid rgba(255,255,255,.09);padding:28px 22px;backdrop-filter:blur(3px)}
+    .truck-frame{width:min(1140px,100%);margin:auto;border:1px solid #282828;background:#000;overflow:hidden}
+    .truck-photo{height:440px;background:#000;overflow:hidden}
+    .truck-photo img{width:100%;height:100%;object-fit:cover;object-position:center 51%;background:#000}
+    .truck-copy-box{padding:28px 22px 30px;text-align:center;background:#090909;border-top:1px solid #282828}
     .truck-copy-box h2{font-size:clamp(2rem,8vw,4rem);text-transform:uppercase;line-height:1.04}
-    .truck-copy-box p{margin-top:13px;color:#ddd}
+    .truck-copy-box p{max-width:760px;margin:13px auto 0;color:#ddd}
 
     footer{background:#000;text-align:center;padding:40px 18px;border-top:2px solid #a80000}
     footer h2{text-transform:uppercase;letter-spacing:2px}
@@ -154,6 +153,8 @@
       .logo-window{height:125px}
       .spectro-crop{height:690px}
       .spectro-crop img{height:790px;transform:translateY(-50px)}
+      .truck-photo{height:360px}
+      .truck-photo img{object-position:center 51%}
     }
   </style>
 </head>
@@ -319,13 +320,12 @@
 
     <section class="truck-section">
       <div class="truck-frame">
-        <img src="truck-profile-fixed.jpg" alt="Black GMC Sierra side profile">
-        <div class="truck-shade"></div>
-        <div class="truck-copy">
-          <div class="truck-copy-box">
-            <h2>Not Assembled. <span class="red">Engineered.</span></h2>
-            <p>Dayberry Blueprinting combines fabrication, experimentation and actual vehicle testing instead of treating performance parts like decorative jewelry.</p>
-          </div>
+        <div class="truck-photo">
+          <img src="truck-profile-fixed.jpg" alt="Black GMC Sierra side profile">
+        </div>
+        <div class="truck-copy-box">
+          <h2>Not Assembled. <span class="red">Engineered.</span></h2>
+          <p>Dayberry Blueprinting combines fabrication, experimentation and actual vehicle testing instead of treating performance parts like decorative jewelry.</p>
         </div>
       </div>
     </section>
