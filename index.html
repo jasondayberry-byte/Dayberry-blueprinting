@@ -115,6 +115,8 @@
 
     .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
     .gallery-card{background:#0a0a0a;border:1px solid #272727;overflow:hidden}
+    .featured-production{grid-column:1/-1}
+    .featured-production .gallery-media img{max-height:900px}
     .gallery-media{background:#000;display:flex;align-items:center;justify-content:center;padding:10px}
     .gallery-media img{width:100%;height:auto;max-height:780px;object-fit:contain;object-position:center;background:#000}
     .gallery-copy{padding:20px}
@@ -292,6 +294,15 @@
           <p>Fabrication, installed testing and finished components.</p>
         </div>
         <div class="gallery">
+          <figure class="gallery-card featured-production">
+            <div class="gallery-media">
+              <img src="four_stainless_exhaust_tubes_on_workbench.png?v=20260925b" alt="Four Laminar30 stainless sections in production">
+            </div>
+            <figcaption class="gallery-copy">
+              <h4>More Laminar30 Sets</h4>
+              <p>Four stainless Laminar30 sections in production for additional builds.</p>
+            </figcaption>
+          </figure>
           <figure class="gallery-card">
             <div class="gallery-media">
               <img src="laminar-build-1.jpg" alt="Finished Dayberry Blueprinting Laminar30 pair">
@@ -331,17 +342,7 @@
               <p>Finished V-band end sections and transition geometry.</p>
             </figcaption>
           </figure>
-
-          <figure class="gallery-card">
-            <div class="gallery-media">
-              <img src="four_stainless_exhaust_tubes_on_workbench.png" alt="Four Laminar30 stainless sections in production">
-            </div>
-            <figcaption class="gallery-copy">
-              <h4>More Laminar30 Sets</h4>
-              <p>Four stainless Laminar30 sections in production for additional builds.</p>
-            </figcaption>
-          </figure>
-        </div>
+</div>
       </div>
     </section>
 
