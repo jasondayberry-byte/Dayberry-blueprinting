@@ -178,7 +178,35 @@
       .engine-photo{height:360px}
       .engine-photo img{transform:scale(2.35);object-position:center 50%}
     }
-  </style>
+  
+/* Premium editorial refinement — original image pixels untouched */
+:root{--red:#d52932;--silver:#e9eaeb}
+body{font-family:Inter,Arial,Helvetica,sans-serif;letter-spacing:.005em}
+.hero{min-height:88svh;background:radial-gradient(ellipse at 65% 5%,#321316 0%,#111113 34%,#050505 76%);position:relative}
+.hero:after{content:"";position:absolute;bottom:0;left:5%;right:5%;height:1px;background:linear-gradient(90deg,transparent,#a12b31,transparent)}
+.hero-card{border:0;background:transparent;backdrop-filter:none;max-width:900px}
+.logo-window{height:170px;background:transparent;width:min(700px,100%);overflow:visible}
+.logo-window img{object-fit:contain}
+.hero-kicker{font-size:11px;letter-spacing:.31em;color:#db777c;font-weight:800;margin:10px 0 20px}
+h1{font-weight:900;letter-spacing:-.048em;text-transform:none}
+.tagline{color:#dadada;letter-spacing:.25em}
+.hero-copy{color:#b7bbc1;max-width:580px}
+.button{background:#b71c25;border:1px solid #b71c25;transition:background .2s,transform .2s}
+.button:hover{background:#ed3039;transform:translateY(-2px)}
+.button.secondary{border-color:#515257;background:#151517}
+section{padding-block:95px}
+.section-title h2{letter-spacing:-.04em}
+.section-title p{color:#aeb0b5}
+.gallery{gap:20px}
+.gallery-card{border:1px solid #343438;background:linear-gradient(160deg,#121316,#080809);border-radius:3px}
+.gallery-media{padding:0;background:#0a0a0b;min-height:225px}
+.gallery-media img{width:100%;height:340px;max-height:none;object-fit:contain}
+.gallery-copy{padding:18px 22px 24px;border-top:1px solid #26272a}
+.gallery-copy h4{letter-spacing:.12em;font-size:.92rem}
+.gallery-copy p{font-size:.91rem;color:#aaa}
+.card,.panel,.price-card{border-color:#2c2d30;background:linear-gradient(150deg,#131417,#080809)}
+@media(max-width:900px){section{padding-block:65px}.gallery-media img{height:auto;max-height:380px}.hero{min-height:82svh}.logo-window{height:135px}.hero-kicker{letter-spacing:.18em}}
+</style>
 </head>
 <body>
 
@@ -187,14 +215,14 @@
       <div class="logo-window">
         <img src="logo.jpg" alt="Dayberry Blueprinting logo">
       </div>
-      <h1>Dayberry <span class="red">Blueprinting</span></h1>
+      <div class="hero-kicker">PRECISION FABRICATION / TESTED ENGINEERING</div><h1>Dayberry <span class="red">Blueprinting</span></h1>
       <div class="tagline">Not Assembled. Engineered.</div>
       <p class="hero-copy">
         Rotary engine blueprinting, performance fabrication and real-world development backed by testing, measurements and data.
       </p>
       <div class="hero-buttons">
         <a class="button" href="laminar30.html">Shop Laminar30</a>
-        <a class="button secondary" href="#build-gallery">Build Photos</a>
+        <a class="button secondary" href="#build-gallery">View the Collection</a>
       </div>
     </div>
   </header>
@@ -290,63 +318,16 @@
     <section class="dark" id="build-gallery">
       <div class="inner">
         <div class="section-title">
-          <h2>Laminar30 <span class="red">Development</span></h2>
-          <p>Fabrication, installed testing and finished components.</p>
+          <h2>Precision <span class="red">in Every Detail.</span></h2>
+          <p>Purpose-built stainless. Signature acoustic character. Dayberry Blueprinting.</p>
         </div>
         <div class="gallery">
           <!-- October 2026 Dayberry Blueprinting product photography -->
-          <figure class="gallery-card featured-production"><div class="gallery-media"><img loading="lazy" src="IMG_7407.png" alt="Dayberry Blueprinting Laminar30 workshop presentation 1"></div><figcaption class="gallery-copy"><h4>Dayberry Blueprinting Workshop</h4><p>New branded workshop imagery featuring Laminar30 development.</p></figcaption></figure>
+          <figure class="gallery-card"><div class="gallery-media"><img loading="lazy" src="IMG_7407.png" alt="Dayberry Blueprinting Laminar30 workshop presentation 1"></div><figcaption class="gallery-copy"><h4>Dayberry Blueprinting Workshop</h4><p>New branded workshop imagery featuring Laminar30 development.</p></figcaption></figure>
           <figure class="gallery-card"><div class="gallery-media"><img loading="lazy" src="IMG_7408.png" alt="Dayberry Blueprinting Laminar30 workshop presentation 2"></div><figcaption class="gallery-copy"><h4>Laminar30 Studio Photography</h4><p>New branded workshop imagery featuring Laminar30 development.</p></figcaption></figure>
           <figure class="gallery-card"><div class="gallery-media"><img loading="lazy" src="IMG_7410.png" alt="Dayberry Blueprinting Laminar30 workshop presentation 3"></div><figcaption class="gallery-copy"><h4>Laminar30 Studio Photography</h4><p>New branded workshop imagery featuring Laminar30 development.</p></figcaption></figure>
           <figure class="gallery-card"><div class="gallery-media"><img loading="lazy" src="IMG_7411.png" alt="Dayberry Blueprinting Laminar30 workshop presentation 4"></div><figcaption class="gallery-copy"><h4>Workshop Testing & Presentation</h4><p>New workshop presentation with development imagery.</p></figcaption></figure>
-          <figure class="gallery-card featured-production">
-            <div class="gallery-media">
-              <img src="four_stainless_exhaust_tubes_on_workbench.png?v=20260925b" alt="Four Laminar30 stainless sections in production">
-            </div>
-            <figcaption class="gallery-copy">
-              <h4>More Laminar30 Sets</h4>
-              <p>Four stainless Laminar30 sections in production for additional builds.</p>
-            </figcaption>
-          </figure>
-          <figure class="gallery-card">
-            <div class="gallery-media">
-              <img src="laminar-build-1.jpg" alt="Finished Dayberry Blueprinting Laminar30 pair">
-            </div>
-            <figcaption class="gallery-copy">
-              <h4>Finished Pair</h4>
-              <p>Stainless Laminar30 development pieces with DB branding.</p>
-            </figcaption>
-          </figure>
 
-          <figure class="gallery-card">
-            <div class="gallery-media">
-              <img src="laminar-build-2.jpg" alt="Full length Laminar30 stainless fabrication">
-            </div>
-            <figcaption class="gallery-copy">
-              <h4>Full-Length Fabrication</h4>
-              <p>Real full-length stainless sections during the build process.</p>
-            </figcaption>
-          </figure>
-
-          <figure class="gallery-card">
-            <div class="gallery-media">
-              <img src="laminar-installed.jpg" alt="Laminar30 installed under GMC Sierra">
-            </div>
-            <figcaption class="gallery-copy">
-              <h4>Installed Testing</h4>
-              <p>Real-world under-truck configuration used during exhaust testing.</p>
-            </figcaption>
-          </figure>
-
-          <figure class="gallery-card">
-            <div class="gallery-media">
-              <img src="laminar-flanges-fixed.jpg" alt="Finished Laminar30 V-band end flanges">
-            </div>
-            <figcaption class="gallery-copy">
-              <h4>End Detail</h4>
-              <p>Finished V-band end sections and transition geometry.</p>
-            </figcaption>
-          </figure>
 </div>
       </div>
     </section>
