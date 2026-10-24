@@ -206,6 +206,12 @@ section{padding-block:95px}
 .gallery-copy p{font-size:.91rem;color:#aaa}
 .card,.panel,.price-card{border-color:#2c2d30;background:linear-gradient(150deg,#131417,#080809)}
 @media(max-width:900px){section{padding-block:65px}.gallery-media img{height:auto;max-height:380px}.hero{min-height:82svh}.logo-window{height:135px}.hero-kicker{letter-spacing:.18em}}
+
+/* Larger original product imagery, mobile first */
+.gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.gallery-media{padding:0;min-height:0}
+.gallery-media img{width:100%;height:auto!important;max-height:none!important;object-fit:contain}
+@media(max-width:900px){.gallery{grid-template-columns:1fr;gap:24px}.gallery-media img{width:100%;height:auto!important;max-height:none!important}}
 </style>
 </head>
 <body>
