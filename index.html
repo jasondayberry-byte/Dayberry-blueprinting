@@ -212,6 +212,14 @@ section{padding-block:95px}
 .gallery-media{padding:0;min-height:0}
 .gallery-media img{width:100%;height:auto!important;max-height:none!important;object-fit:contain}
 @media(max-width:900px){.gallery{grid-template-columns:1fr;gap:24px}.gallery-media img{width:100%;height:auto!important;max-height:none!important}}
+
+/* Full-width mobile showcase, applied after all older styles */
+@media(max-width:900px){
+ .gallery{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:30px!important}
+ .gallery-card{width:100%;min-width:0}
+ .gallery-media{padding:0!important;min-height:0!important;display:block!important}
+ .gallery-media img{display:block!important;width:100%!important;height:auto!important;max-height:none!important;object-fit:contain!important}
+}
 </style>
 </head>
 <body>
