@@ -37,7 +37,38 @@ form{background:var(--card);border:1px solid var(--line);padding:clamp(20px,4vw,
 </div></fieldset>
 <label class="check"><input id="permission" name="contact_consent" value="Agreed to inquiry processing via FormSubmit" type="checkbox" required><span>I agree to have my information sent to Dayberry Blueprinting using FormSubmit for a response to this inquiry. This does not reserve a product or authorize a deposit.</span></label>
 <p class="note">Your details are processed by the third-party FormSubmit service and emailed to Dayberry Blueprinting to respond to your inquiry. FormSubmit states that it retains submissions for up to 30 days. Do not include payment information or sensitive personal data. Submitting this form does not reserve a product or authorize a deposit. Email delivery requires owner activation and a successful test.</p>
-<button class="action" type="submit">Send Laminar30 inquiry</button>
+<button class="action" id="submitButton" type="submit">Send Laminar30 inquiry</button>
 <div class="status" id="status" role="status" aria-live="polite"></div>
 </form></main><footer>DAYBERRY BLUEPRINTING · NOT ASSEMBLED. ENGINEERED.</footer>
-</body></html>
+<script>
+(function(){
+const form=document.getElementById('inquiryForm');
+const button=document.getElementById('submitButton');
+const status=document.getElementById('status');
+form.addEventListener('submit',async function(event){
+  event.preventDefault();
+  if(!form.reportValidity())return;
+  button.disabled=true;
+  button.textContent='Sending inquiry…';
+  status.style.display='block';
+  status.textContent='Submitting your Laminar30 inquiry securely…';
+  try{
+    const result=await fetch('https://formsubmit.co/ajax/Jasondayberry@gmail.com',{
+      method:'POST',
+      body:new FormData(form),
+      headers:{'Accept':'application/json'}
+    });
+    const data=await result.json();
+    if(!result.ok || !(data.success===true || data.success==='true')){
+      throw new Error('The submission was not confirmed. Please try again.');
+    }
+    // Only redirect after a positively confirmed response, never on error.
+    window.location.assign('laminar30-thank-you.html');
+  }catch(error){
+    status.textContent='Your inquiry could not be confirmed. Please check your connection and try again. If it continues, message @dayberryblueprinting on Instagram.';
+    button.disabled=false;
+    button.textContent='Try sending again';
+  }
+});
+})();
+</script></body></html>
