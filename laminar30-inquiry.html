@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090a0c"><meta name="description" content="Request a Laminar30 fitment quote or join the Dayberry Blueprinting production interest list.">
+<title>Laminar30 Fitment & Reservation Inquiry | Dayberry Blueprinting</title>
+<style>
+:root{color-scheme:dark;--bg:#08090b;--card:#15171b;--line:#373b40;--red:#d52b34;--muted:#b7bbc1}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% 0%,#2c1317,var(--bg) 48%);font:16px/1.5 system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:#f5f5f6}
+.wrap{width:min(840px,calc(100% - 32px));margin:auto}header{border-bottom:1px solid var(--line);padding:15px 0}header .wrap{display:flex;align-items:center;justify-content:space-between;gap:18px}header img{width:220px;max-width:55vw;height:74px;object-fit:contain}a{color:#e5e5e8}main{padding:48px 0 80px}.kicker{letter-spacing:.2em;font-size:12px;color:#f1848a;font-weight:750;text-transform:uppercase}h1{font-size:clamp(34px,7vw,60px);line-height:1.05;letter-spacing:-.05em;margin:12px 0}h1 span{color:var(--red)}.intro{color:var(--muted);max-width:650px;margin-bottom:35px}
+form{background:var(--card);border:1px solid var(--line);padding:clamp(20px,4vw,36px)}fieldset{margin:0 0 30px;padding:0;border:0}legend{font-size:21px;font-weight:750;margin-bottom:18px;letter-spacing:-.02em}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}label{display:block;font-size:13px;font-weight:650;margin:0 0 6px;color:#e2e4e7}input,select,textarea{width:100%;min-height:47px;padding:12px;color:#fff;background:#090a0c;border:1px solid #555960;border-radius:3px;font:inherit}textarea{resize:vertical;min-height:114px}input:focus,select:focus,textarea:focus{outline:2px solid #f35b63;outline-offset:1px}.field{margin-bottom:17px}.field:last-child{margin-bottom:0}.wide{grid-column:1/-1}.check{display:flex;align-items:flex-start;gap:10px;color:#c4c8cf;font-size:13px}.check input{width:18px;height:18px;min-height:auto;margin:2px 0 0;flex:none}.action{background:var(--red);border:0;color:#fff;padding:15px 20px;font:inherit;font-weight:800;cursor:pointer;width:100%;text-transform:uppercase;letter-spacing:.06em}.action:hover{background:#ee4149}.note{font-size:13px;color:var(--muted)}.status{padding:13px;border:1px solid #62666c;background:#101215;margin-top:18px;display:none}.status a{color:#ff989d;font-weight:750}footer{text-align:center;color:#85898f;font-size:12px;padding:30px}
+@media(max-width:650px){.grid{grid-template-columns:1fr}.wide{grid-column:auto}main{padding-top:30px}header img{height:60px}}
+</style></head>
+<body><header><div class="wrap"><a href="./"><img src="logo.jpg" alt="Dayberry Blueprinting official logo"></a><a href="laminar30.html">Back to Laminar30</a></div></header>
+<main class="wrap"><div class="kicker">Dayberry Blueprinting / Laminar30</div><h1>Build your <span>sound.</span></h1><p class="intro">Tell us what you drive and what your exhaust is running now. We'll review the details before discussing fitment, pricing, and availability. This is an inquiry only, not a paid reservation.</p>
+<form id="inquiryForm">
+<fieldset><legend>01 / Your details</legend><div class="grid">
+<div class="field"><label for="fullName">Full name *</label><input id="fullName" name="name" autocomplete="name" required maxlength="120"></div>
+<div class="field"><label for="email">Email address *</label><input id="email" name="email" type="email" autocomplete="email" required maxlength="180"></div>
+<div class="field"><label for="phone">Phone (optional)</label><input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="40"></div>
+<div class="field"><label for="instagram">Instagram handle (optional)</label><input id="instagram" name="instagram" placeholder="@username" maxlength="80"></div>
+<div class="field wide"><label for="location">City / state or country (for shipping estimate)</label><input id="location" name="location" autocomplete="address-level2" maxlength="120"></div>
+</div></fieldset>
+<fieldset><legend>02 / Vehicle & current setup</legend><div class="grid">
+<div class="field"><label for="year">Vehicle year *</label><input id="year" name="year" type="number" min="1950" max="2035" required placeholder="2018"></div>
+<div class="field"><label for="make">Make *</label><input id="make" name="make" required maxlength="80" placeholder="GMC"></div>
+<div class="field"><label for="model">Model *</label><input id="model" name="model" required maxlength="100" placeholder="Sierra"></div>
+<div class="field"><label for="engine">Engine *</label><input id="engine" name="engine" required maxlength="100" placeholder="5.3L V8"></div>
+<div class="field"><label for="layout">Exhaust layout *</label><select id="layout" name="layout" required><option value="">Select setup</option><option>Single</option><option>Dual</option><option>Other / unsure</option></select></div>
+<div class="field"><label for="diameter">Pipe diameter</label><select id="diameter" name="diameter"><option value="">Not sure</option><option>2.25 inch</option><option>2.5 inch</option><option>2.75 inch</option><option>3 inch</option><option>3.5 inch</option><option>Other</option></select></div>
+<div class="field wide"><label for="current">Current exhaust setup *</label><textarea id="current" name="current" required maxlength="1600" placeholder="Headers, catalytic converters, X/H-pipe, mufflers or delete, resonators, exit location..."></textarea></div>
+<div class="field wide"><label for="goal">What sound are you after?</label><textarea id="goal" name="goal" maxlength="1000" placeholder="Less rasp or drone, deeper idle, crisper WOT, louder or quieter..."></textarea></div>
+<div class="field wide"><label for="mods">Other engine modifications</label><input id="mods" name="mods" maxlength="300" placeholder="Cam, tune, forced induction, etc."></div>
+</div></fieldset>
+<fieldset><legend>03 / What are you interested in?</legend><div class="grid">
+<div class="field"><label for="quantity">Laminar30 configuration *</label><select id="quantity" name="quantity" required><option value="">Select option</option><option>Pair</option><option>Single</option><option>Need fitment advice</option></select></div>
+<div class="field"><label for="stage">Your timeline</label><select id="stage" name="stage"><option>Just researching</option><option>Ready to discuss a quote</option><option>Interested in next production batch</option></select></div>
+<div class="field wide"><label for="notes">Additional questions</label><textarea id="notes" name="notes" maxlength="1000" placeholder="Optional notes about installation, shipping, custom fitment..."></textarea></div>
+</div></fieldset>
+<label class="check"><input id="permission" type="checkbox" required><span>I agree to share these details with Dayberry Blueprinting for a response to this inquiry. This does not reserve a product or authorize a deposit.</span></label>
+<p class="note">For this draft, inquiries are not stored on the website. The button below copies the completed request so you can send it to Dayberry Blueprinting through Instagram. A secure form receiver is needed before enabling direct submission.</p>
+<button class="action" type="submit">Copy inquiry & open Instagram</button>
+<div class="status" id="status" role="status" aria-live="polite"></div>
+</form></main><footer>DAYBERRY BLUEPRINTING · NOT ASSEMBLED. ENGINEERED.</footer>
+<script>
+(function(){
+const form=document.getElementById('inquiryForm'),status=document.getElementById('status');
+form.addEventListener('submit',async function(event){
+event.preventDefault();
+if(!form.reportValidity())return;
+const fields=[['Name','name'],['Email','email'],['Phone','phone'],['Instagram','instagram'],['Location','location'],['Year','year'],['Make','make'],['Model','model'],['Engine','engine'],['Exhaust layout','layout'],['Pipe diameter','diameter'],['Current setup','current'],['Sound goal','goal'],['Engine modifications','mods'],['Interest','quantity'],['Timeline','stage'],['Other notes','notes']];
+const data=new FormData(form);
+const message='LAMINAR30 INQUIRY\n\n'+fields.map(([label,key])=>label+': '+(data.get(key)||'Not provided')).join('\n');
+let copied=false;
+try{await navigator.clipboard.writeText(message);copied=true}catch(e){}
+status.style.display='block';
+if(!copied){status.innerHTML='<strong>Copy the inquiry below, then open Instagram.</strong><textarea id="copyFallback" readonly></textarea><p><a href="https://www.instagram.com/dayberryblueprinting/" target="_blank" rel="noopener noreferrer">Open Dayberry Blueprinting Instagram</a></p>';document.getElementById('copyFallback').value=message;return;}
+status.innerHTML='<strong>Inquiry copied.</strong> Paste it into a message to Dayberry Blueprinting on Instagram. Your information has not been sent automatically. <a href="https://www.instagram.com/dayberryblueprinting/" target="_blank" rel="noopener noreferrer">Open Instagram</a>';
+window.open('https://www.instagram.com/dayberryblueprinting/','_blank','noopener,noreferrer');
+});
+})();
+</script></body></html>
