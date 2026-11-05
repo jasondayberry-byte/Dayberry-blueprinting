@@ -50,7 +50,7 @@ const emailLink=document.getElementById('emailFallback');
 function refreshEmailFallback(){
  const data=new FormData(form);
  const keys=[['Full name','name'],['Email','email'],['Phone','phone'],['Instagram','instagram'],['Location','location'],['Year','year'],['Make','make'],['Model','model'],['Engine','engine'],['Exhaust layout','layout'],['Pipe diameter','diameter'],['Current setup','current'],['Desired sound','goal'],['Modifications','mods'],['Configuration','quantity'],['Timeline','stage'],['Notes','notes']];
- const body=keys.map(([label,key])=>label+': '+(data.get(key)||'')).join('\\n');
+ const body=keys.map(([label,key])=>label+': '+(data.get(key)||'')).join(String.fromCharCode(10));
  emailLink.href='mailto:Jasondayberry@gmail.com?subject='+encodeURIComponent('Laminar30 Fitment Inquiry')+'&body='+encodeURIComponent(body);
 }
 form.addEventListener('input',refreshEmailFallback);
