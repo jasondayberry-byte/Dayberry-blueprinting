@@ -244,6 +244,25 @@ section{padding-block:95px}
     margin-bottom:23px;
   }
 }
+
+/* Premium truck editorial showcase */
+.truck-editorial{background:linear-gradient(180deg,#090a0d 0%,#050505 100%);border-top:1px solid #303036}
+.truck-editorial .editorial-heading{max-width:850px;margin:0 auto 36px;text-align:center}
+.truck-editorial .editorial-heading .eyebrow{margin:0 0 16px;color:#de6870;letter-spacing:.18em}
+.truck-editorial .editorial-heading h2{font-size:clamp(2.4rem,8vw,4.8rem);line-height:1;letter-spacing:-.055em;text-transform:none;margin-bottom:17px}
+.truck-editorial .editorial-heading p{color:#aeb1b8;max-width:620px;margin:auto}
+.truck-showcase{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.truck-tile{position:relative;overflow:hidden;border:1px solid #34363d;background:#101114}
+.truck-tile img{width:100%;height:410px;object-fit:cover;transition:transform .4s ease}
+.truck-tile:hover img{transform:scale(1.025)}
+.truck-tile:first-child{grid-column:1/-1}
+.truck-tile:first-child img{height:490px;object-position:center 54%}
+.truck-tile figcaption{padding:20px 22px;background:linear-gradient(130deg,#15161a,#09090a)}
+.truck-tile h3{font-size:1.1rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:5px}
+.truck-tile p{font-size:.9rem;color:#a7aab0}
+.truck-credit{font-size:.76rem!important;color:#8d929b!important;margin-top:8px}
+.truck-editorial .disclaimer{font-size:12px;color:#858991;text-align:center;margin:23px auto 0;max-width:720px}
+@media(max-width:760px){.truck-showcase{grid-template-columns:1fr;gap:17px}.truck-tile:first-child{grid-column:auto}.truck-tile img,.truck-tile:first-child img{height:265px}.truck-tile figcaption{padding:18px}.truck-editorial .editorial-heading{margin-bottom:28px}}
 </style>
 </head>
 <body>
@@ -445,6 +464,31 @@ section{padding-block:95px}
             </figcaption>
           </figure>
         </div>
+      </div>
+    </section>
+
+    <section class="truck-editorial" id="truck-culture">
+      <div class="inner">
+        <div class="editorial-heading">
+          <span class="eyebrow">THE CULTURE / THE MACHINES</span>
+          <h2>Built to stand <span class="red">apart.</span></h2>
+          <p>From our real-world Sierra development platform to the wider pickup scene, performance is about purposeful design, execution, and character.</p>
+        </div>
+        <div class="truck-showcase">
+          <figure class="truck-tile">
+            <img loading="lazy" src="truck-profile-fixed.jpg" alt="Dayberry Blueprinting GMC Sierra development truck side profile">
+            <figcaption><h3>Our Sierra / Real development platform</h3><p>Dayberry Blueprinting's 5.3L Sierra: the vehicle behind Laminar30's street testing and acoustic development.</p></figcaption>
+          </figure>
+          <figure class="truck-tile">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1571986929789-95307bbfa7c2?auto=format&amp;fit=crop&amp;w=1200&amp;q=82" alt="Black custom pickup truck photographed near the desert" referrerpolicy="no-referrer">
+            <figcaption><h3>Truck culture / Custom stance</h3><p>Visual inspiration from the broader custom pickup community.</p><p class="truck-credit">Photography: Sergio Rota / Unsplash</p></figcaption>
+          </figure>
+          <figure class="truck-tile">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1657145125591-c9ff0bd28533?auto=format&amp;fit=crop&amp;w=1200&amp;q=82" alt="GMC Sierra pickup photographed on a road" referrerpolicy="no-referrer">
+            <figcaption><h3>Truck culture / Street presence</h3><p>Distinct builds. Individual style. The machines that keep the scene moving.</p><p class="truck-credit">Photography: Somalia Veteran / Unsplash</p></figcaption>
+          </figure>
+        </div>
+        <p class="disclaimer">The community showcase photos are illustrative and do not represent Dayberry customers, installations, or Laminar30 test results.</p>
       </div>
     </section>
 
