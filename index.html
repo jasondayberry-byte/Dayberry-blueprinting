@@ -220,6 +220,30 @@ section{padding-block:95px}
  .gallery-media{padding:0!important;min-height:0!important;display:block!important}
  .gallery-media img{display:block!important;width:100%!important;height:auto!important;max-height:none!important;object-fit:contain!important}
 }
+
+/* Homepage hero logo: enlarge the original artwork without modifying the image */
+.logo-window{
+  width:min(560px,100%);
+  height:180px;
+  overflow:hidden;
+  margin:0 auto 22px;
+  background:#000;
+}
+.logo-window img{
+  display:block;
+  width:100%;
+  height:100%;
+  max-width:none;
+  object-fit:cover;
+  object-position:center center;
+}
+@media(max-width:900px){
+  .logo-window{
+    width:min(360px,100%);
+    height:138px;
+    margin-bottom:23px;
+  }
+}
 </style>
 </head>
 <body>
