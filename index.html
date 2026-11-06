@@ -265,6 +265,16 @@ section{padding-block:95px}
 @media(max-width:760px){.truck-showcase{grid-template-columns:1fr;gap:17px}.truck-tile:first-child{grid-column:auto}.truck-tile img,.truck-tile:first-child img{height:265px}.truck-tile figcaption{padding:18px}.truck-editorial .editorial-heading{margin-bottom:28px}}
 
 #build-gallery .gallery figure{overflow:hidden}#build-gallery .gallery img{width:100%;height:100%;max-height:540px;object-fit:cover;display:block}#build-gallery .gallery figure[hidden]{display:none!important}
+
+#build-gallery .gallery{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:20px!important}
+#build-gallery .db-feature{grid-column:1/-1}
+#build-gallery .gallery figure{margin:0;background:#101114;border:1px solid #303238;overflow:hidden}
+#build-gallery .gallery img{display:block;width:100%;height:300px;max-height:none;object-fit:cover}
+#build-gallery .db-feature img{height:auto;aspect-ratio:16/9;object-fit:contain;background:#08090b}
+#build-gallery figcaption{padding:18px 20px 20px;display:grid;gap:6px}
+#build-gallery figcaption strong{font-size:13px;letter-spacing:.12em;color:#f4f4f4}
+#build-gallery figcaption span{font-size:14px;color:#aeb3b9;line-height:1.5}
+@media(max-width:760px){#build-gallery .gallery{grid-template-columns:1fr!important}#build-gallery .db-feature{grid-column:auto}#build-gallery .gallery img{height:auto;max-height:340px;object-fit:contain}#build-gallery .db-feature img{max-height:none}}
 </style>
 </head>
 <body>
@@ -378,7 +388,11 @@ section{padding-block:95px}
       </div>
     </section>
 
-    <section class="dark" id="build-gallery"><div class="inner"><div class="section-title"><h2>Dayberry <span class="red">Gallery.</span></h2></div><div class="gallery"><figure class="gallery-card"><img loading="lazy" decoding="async" src="dayberry-elevation-feature.jpg" alt="Dayberry Blueprinting Laminar30 concept featuring a lowered black Sierra with ELEVATION badging, at a 76 gas station" onerror="this.closest('figure').hidden=true"></figure><figure class="gallery-card"><img loading="lazy" decoding="async" src="laminar-installed.jpg" alt="Actual stainless exhaust installation on the Sierra" onerror="this.closest('figure').hidden=true"></figure><figure class="gallery-card"><img loading="lazy" decoding="async" src="truck-profile-fixed.jpg" alt="Original Sierra development vehicle" onerror="this.closest('figure').hidden=true"></figure><figure class="gallery-card"><img loading="lazy" decoding="async" src="dayberry-slammed-gas-station.jpg" alt="Slammed Sierra truck at the gas station, design visualization" onerror="this.closest('figure').hidden=true"></figure><figure class="gallery-card"><img loading="lazy" decoding="async" src="dayberry-slammed-branded.jpg" alt="Dayberry Blueprinting slammed Sierra concept artwork" onerror="this.closest('figure').hidden=true"></figure></div></div></section>
+    <section class="dark" id="build-gallery"><div class="inner"><div class="section-title"><h2>Engineering Meets <span class="red">Presence.</span></h2><p>Dayberry Blueprinting brings purpose-built exhaust development and bold automotive design together.</p></div><div class="gallery">
+<figure class="gallery-card db-feature"><img loading="eager" decoding="async" src="dayberry-elevation-feature.jpg" alt="Dayberry Blueprinting branded concept artwork of a black GMC Sierra Elevation at a gas station"><figcaption><strong>THE DAYBERRY VISION</strong><span>A premium Sierra Elevation concept showcasing the attitude behind Laminar30. Concept artwork, not a completed customer build.</span></figcaption></figure>
+<figure class="gallery-card"><img loading="lazy" decoding="async" src="laminar-installed.jpg" alt="Real stainless exhaust installation under Dayberry's Sierra test truck"><figcaption><strong>ENGINEERED IN STAINLESS</strong><span>Actual exhaust fabrication and installation on the development truck.</span></figcaption></figure>
+<figure class="gallery-card"><img loading="lazy" decoding="async" src="truck-profile-fixed.jpg" alt="Dayberry's real GMC Sierra development platform"><figcaption><strong>REAL-WORLD DEVELOPMENT</strong><span>The Sierra used for street testing, sound evaluation and refinement.</span></figcaption></figure>
+</div></div></section>
 
     <section>
       <div class="inner">
