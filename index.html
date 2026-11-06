@@ -263,6 +263,8 @@ section{padding-block:95px}
 .truck-credit{font-size:.76rem!important;color:#8d929b!important;margin-top:8px}
 .truck-editorial .disclaimer{font-size:12px;color:#858991;text-align:center;margin:23px auto 0;max-width:720px}
 @media(max-width:760px){.truck-showcase{grid-template-columns:1fr;gap:17px}.truck-tile:first-child{grid-column:auto}.truck-tile img,.truck-tile:first-child img{height:265px}.truck-tile figcaption{padding:18px}.truck-editorial .editorial-heading{margin-bottom:28px}}
+
+#build-gallery .gallery figure{overflow:hidden}#build-gallery .gallery img{width:100%;height:100%;max-height:540px;object-fit:cover;display:block}#build-gallery .gallery figure[hidden]{display:none!important}
 </style>
 </head>
 <body>
@@ -376,7 +378,7 @@ section{padding-block:95px}
       </div>
     </section>
 
-    <section class="dark" id="build-gallery"><div class="inner"><div class="section-title"><h2>Precision <span class="red">in Every Detail.</span></h2><p>Actual Dayberry Blueprinting development photography, not screenshots.</p></div><div class="gallery"><figure class="gallery-card"><div class="gallery-media"><img loading="lazy" src="laminar-installed.jpg" alt="Real stainless exhaust installation underneath the GMC Sierra"></div><figcaption class="gallery-copy"><h4>Stainless Exhaust Development</h4><p>Real-world installation and fabrication detail.</p></figcaption></figure><figure class="gallery-card"><div class="gallery-media"><img loading="lazy" src="truck-profile-fixed.jpg" alt="Actual GMC Sierra development truck parked outdoors"></div><figcaption class="gallery-copy"><h4>Sierra Test Platform</h4><p>The truck used to develop and test Laminar30.</p></figcaption></figure></div></div></section>
+    <section class="dark" id="build-gallery"><div class="inner"><div class="section-title"><h2>Dayberry <span class="red">Gallery.</span></h2></div><div class="gallery"><figure class="gallery-card"><img loading="lazy" decoding="async" src="laminar-installed.jpg" alt="Actual stainless exhaust installation on the Sierra" onerror="this.closest('figure').hidden=true"></figure><figure class="gallery-card"><img loading="lazy" decoding="async" src="truck-profile-fixed.jpg" alt="Original Sierra development vehicle" onerror="this.closest('figure').hidden=true"></figure><figure class="gallery-card"><img loading="lazy" decoding="async" src="dayberry-slammed-gas-station.jpg" alt="Slammed Sierra truck at the gas station, design visualization" onerror="this.closest('figure').hidden=true"></figure><figure class="gallery-card"><img loading="lazy" decoding="async" src="dayberry-slammed-branded.jpg" alt="Dayberry Blueprinting slammed Sierra concept artwork" onerror="this.closest('figure').hidden=true"></figure></div></div></section>
 
     <section>
       <div class="inner">
