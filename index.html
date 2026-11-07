@@ -392,8 +392,8 @@ section{padding-block:95px}
         </div>
         <div class="sierra-video-feature">
           <div class="sierra-video-heading"><span>DAYBERRY BLUEPRINTING / REAL-WORLD EXHAUST TESTING</span><strong>Hear the Difference.</strong></div>
-          <video controls playsinline preload="metadata" poster="truck-profile-fixed.jpg" aria-label="Laminar30 exhaust sound and driving demonstration">
-            <source src="laminar30-exhaust-feature-web.mp4?v=20261107b" type="video/mp4">
+          <video id="laminar30-exhaust-highlight" controls playsinline preload="metadata" poster="truck-profile-fixed.jpg" aria-label="Twenty-second Laminar30 exhaust sound highlight">
+            <source src="laminar30-exhaust-feature-web.mp4#t=54,74" type="video/mp4">
             <a href="laminar30-exhaust-feature-web.mp4">Watch the Laminar30 exhaust demonstration</a>
           </video>
           <a class="sierra-video-direct" href="laminar30-exhaust-feature-web.mp4">Open Laminar30 exhaust video ↗</a>
@@ -563,5 +563,23 @@ section{padding-block:95px}
     <p>NOT ASSEMBLED. ENGINEERED.</p>
     <p>© 2026 Dayberry Blueprinting</p>
   </footer>
+
+<script>
+/* Play only the 20-second exhaust highlight from the original uploaded video. */
+(function () {
+  const clip = document.getElementById('laminar30-exhaust-highlight');
+  if (!clip) return;
+  const start = 54, end = 74;
+  clip.addEventListener('loadedmetadata', function () {
+    if (clip.currentTime < start || clip.currentTime >= end) clip.currentTime = start;
+  });
+  clip.addEventListener('play', function () {
+    if (clip.currentTime < start || clip.currentTime >= end) clip.currentTime = start;
+  });
+  clip.addEventListener('timeupdate', function () {
+    if (clip.currentTime >= end) { clip.pause(); clip.currentTime = start; }
+  });
+})();
+</script>
 </body>
 </html>
