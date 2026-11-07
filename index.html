@@ -312,6 +312,27 @@ section{padding-block:95px}
 #build-gallery .laminar-editorial-divider{font-size:9px;letter-spacing:.08em;gap:8px;text-align:center}
 }
 
+
+/* Compact, unaltered Sierra image; user-uploaded video with native playback controls. */
+.engine-section{padding:44px 18px!important}
+.engine-frame{max-width:900px!important}
+.engine-photo{height:auto!important;max-height:265px!important}
+.engine-photo img{display:block;width:100%;height:265px!important;object-fit:contain!important;object-position:center!important;transform:none!important;background:#050506}
+.sierra-video-feature{padding:22px 22px 6px;border-top:1px solid #26272b;background:#0b0b0c}
+.sierra-video-heading{display:grid;gap:5px;margin-bottom:13px}
+.sierra-video-heading span{font-size:10px;color:#d76d75;letter-spacing:.16em;font-weight:800}
+.sierra-video-heading strong{font-size:clamp(1.15rem,3vw,1.65rem);color:#eee}
+.sierra-video-feature video{display:block;width:100%;max-height:430px;aspect-ratio:16/9;background:#000;object-fit:contain;border:1px solid #303035}
+.sierra-video-direct{display:inline-block;color:#e98d92;padding:11px 0 4px;font-size:13px;text-decoration:underline}
+@media(max-width:760px){
+.engine-section{padding:38px 14px!important}
+.engine-photo{max-height:190px!important}
+.engine-photo img{height:190px!important}
+.engine-copy{padding:19px 18px 23px!important}
+.sierra-video-feature{padding:18px 15px 5px}
+.sierra-video-feature video{max-height:260px}
+}
+
 </style>
 </head>
 <body>
@@ -368,6 +389,14 @@ section{padding-block:95px}
       <div class="engine-frame">
         <div class="engine-photo">
           <img src="truck-profile-fixed.jpg" alt="Actual GMC Sierra development truck">
+        </div>
+        <div class="sierra-video-feature">
+          <div class="sierra-video-heading"><span>DAYBERRY BLUEPRINTING / REAL-WORLD TESTING</span><strong>Hear the development.</strong></div>
+          <video controls playsinline preload="metadata" poster="truck-profile-fixed.jpg" aria-label="Dayberry Blueprinting uploaded Laminar30 exhaust video">
+            <source src="IMG_7907.mov" type="video/quicktime">
+            <a href="IMG_7907.mov">Watch the original Laminar30 exhaust video</a>
+          </video>
+          <a class="sierra-video-direct" href="IMG_7907.mov">Open original video ↗</a>
         </div>
         <div class="engine-copy">
           <h2>Sierra <span class="red">Test Platform</span></h2>
