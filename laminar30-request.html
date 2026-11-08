@@ -44,6 +44,14 @@ form{background:var(--card);border:1px solid var(--line);padding:clamp(20px,4vw,
 <script>
 (function(){
 const form=document.getElementById('inquiryForm');
+/* Carry the visitor's selected product option from the product page to the inquiry. */
+const selected=new URLSearchParams(window.location.search).get('configuration')||'';
+if(selected.startsWith('Laminar30 ')){
+ const quantity=form.querySelector('#quantity');
+ if(quantity) quantity.value=selected.includes('pair')?'Pair':'Single';
+ const notes=form.querySelector('#notes');
+ if(notes) notes.value=selected.includes('V-band')?'Requested V-band connection hardware; please include additional cost in the quote.':'Standard 3-inch ends requested; please confirm fitment.';
+}
 const button=document.getElementById('submitButton');
 const status=document.getElementById('status');
 const emailLink=document.getElementById('emailFallback');

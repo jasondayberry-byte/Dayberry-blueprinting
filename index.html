@@ -333,6 +333,31 @@ section{padding-block:95px}
 .sierra-video-feature video{max-height:260px}
 }
 
+
+/* Laminar30 precision product selector — preserves original photography */
+.db-product{background:linear-gradient(145deg,#101114,#050506);border-top:1px solid #393b40;border-bottom:1px solid #393b40}
+.db-product-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.92fr);gap:32px;align-items:start}
+.db-product-photo{background:#060607;border:1px solid #33363a;padding:16px}
+.db-product-photo img{width:100%;height:560px;object-fit:contain}
+.db-product-photo small{display:block;margin-top:9px;color:#a5a8b0;letter-spacing:.08em;font-size:11px}
+.db-product-info h2{font-size:clamp(2.7rem,6vw,4.7rem);line-height:.98;letter-spacing:-.06em}
+.db-product-kicker{font-size:11px;color:#e08087;letter-spacing:.2em;font-weight:800;margin-bottom:12px}
+.db-product-lede{color:#bec0c5;margin:17px 0 22px}
+.db-product-price{font-size:2.6rem;font-weight:900;line-height:1}
+.db-product-subprice{font-size:13px;color:#aeb0b5;margin:6px 0 20px}
+.db-option-label{color:#d4d6da;font-weight:800;font-size:12px;letter-spacing:.09em;text-transform:uppercase;margin:19px 0 8px}
+.db-option-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.db-option{background:#141518;border:1px solid #484a50;color:#eee;padding:15px 12px;font-weight:800;cursor:pointer;text-align:left;font-size:14px}
+.db-option[aria-pressed="true"]{border-color:#e23844;background:#371519;box-shadow:inset 0 0 0 1px #c72330}
+.db-product-specs{margin:25px 0;border-top:1px solid #34363a}
+.db-product-specs div{display:flex;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px solid #303237;font-size:14px}
+.db-product-specs dt{color:#a9abb2}.db-product-specs dd{color:#f3f3f4;text-align:right;font-weight:700}
+.db-total{background:#151518;border:1px solid #41434a;padding:17px;margin-bottom:14px}
+.db-total strong{display:block;font-size:1.8rem}.db-total span{display:block;color:#b7b9bf;font-size:12px}
+.db-product-cta{display:block;text-align:center;width:100%;background:#c51927;border:1px solid #ee414f;color:white;padding:17px 16px;font-weight:900;letter-spacing:.09em;text-transform:uppercase}
+.db-product-legal{font-size:12px;color:#aeb0b7;margin-top:12px}
+@media(max-width:800px){.db-product-grid{grid-template-columns:1fr;gap:19px}.db-product-photo img{height:auto;max-height:520px}.db-product-info h2{font-size:3.25rem}.db-option{font-size:13px}.db-product{padding:55px 16px}}
+
 </style>
 </head>
 <body>
@@ -427,11 +452,53 @@ section{padding-block:95px}
       </div>
     </section>
 
+
+    <section class="db-product" id="laminar30-shop" aria-label="Laminar30 product details and configuration">
+      <div class="inner db-product-grid">
+        <div class="db-product-photo">
+          <img src="IMG_7906.jpeg" alt="Actual Dayberry Blueprinting Laminar30 stainless exhaust assemblies" loading="lazy">
+          <small>ACTUAL LAMINAR30 PRODUCT PHOTOGRAPHY · NO RENDERINGS</small>
+        </div>
+        <div class="db-product-info">
+          <p class="db-product-kicker">DAYBERRY BLUEPRINTING / ACOUSTIC PULSE CONDITIONING SYSTEM</p>
+          <h2>LAMINAR<span class="red">30</span></h2>
+          <p class="db-product-lede">Precision-fabricated 304 stainless steel exhaust component. Developed through multiple real-world configurations to shape exhaust character, clean up rasp in our test setup, and deliver a distinctive sound.</p>
+          <div class="db-product-price" id="db-config-price">$600</div>
+          <p class="db-product-subprice">Introductory price · sales tax and shipping additional where applicable</p>
+          <p class="db-option-label" id="db-quantity-label">Choose your configuration</p>
+          <div class="db-option-row" role="group" aria-labelledby="db-quantity-label">
+            <button type="button" class="db-option" data-db-pack="single" aria-pressed="true">Single · $600</button>
+            <button type="button" class="db-option" data-db-pack="pair" aria-pressed="false">Matched pair · $1,100</button>
+          </div>
+          <p class="db-option-label" id="db-hardware-label">Connection hardware</p>
+          <div class="db-option-row" role="group" aria-labelledby="db-hardware-label">
+            <button type="button" class="db-option" data-db-hardware="standard" aria-pressed="true">Standard 3-inch ends</button>
+            <button type="button" class="db-option" data-db-hardware="vband" aria-pressed="false">V-bands · quote required</button>
+          </div>
+          <dl class="db-product-specs">
+            <div><dt>Material</dt><dd>304 Stainless Steel</dd></div>
+            <div><dt>Wall thickness</dt><dd>16 gauge</dd></div>
+            <div><dt>Inlet / outlet</dt><dd>3 in / 3 in</dd></div>
+            <div><dt>Maximum outer diameter</dt><dd>Approx. 5 in</dd></div>
+            <div><dt>Body length</dt><dd>Approx. 29 in</dd></div>
+            <div><dt>Construction</dt><dd>Back-purged TIG welded</dd></div>
+            <div><dt>Application</dt><dd>Custom exhaust fitment</dd></div>
+          </dl>
+          <div class="db-total" aria-live="polite">
+            <strong id="db-config-total">$600 + tax &amp; shipping</strong>
+            <span id="db-config-note">Final total calculated after fitment and delivery address are confirmed. No payment is collected on this page.</span>
+          </div>
+          <a class="db-product-cta" id="db-config-link" href="laminar30-request.html">Request My Laminar30 →</a>
+          <p class="db-product-legal">Sales tax is calculated at the applicable destination rate; shipping is quoted separately. V-band hardware costs extra. We confirm all charges before payment. Pair saves $100 versus buying two singles.</p>
+        </div>
+      </div>
+    </section>
+
     <section id="pricing"><div class="inner"><div class="section-title"><h2>Laminar30 <span class="red">Pricing</span></h2><p>Introductory pricing on engineered 3-inch stainless exhaust components.</p></div><div class="pricing-grid">
-<div class="price-card featured"><h3>Laminar30 Pair · Introductory Price</h3><div class="price">$1,100</div><p><strong style="color:#fff">SAVE $100 ON A PAIR</strong></p><p>Two singles would cost $1,200. Get the pair for $1,100.</p><p>Shipping additional.</p></div>
-<div class="price-card"><h3>Laminar30 Single</h3><div class="price">$600</div><p>One TIG-welded stainless Laminar30 unit. Shipping additional.</p></div>
+<div class="price-card featured"><h3>Laminar30 Pair · Introductory Price</h3><div class="price">$1,100</div><p><strong style="color:#fff">SAVE $100 ON A PAIR</strong></p><p>Two singles would cost $1,200. Get the pair for $1,100.</p><p>Sales tax and shipping additional where applicable.</p></div>
+<div class="price-card"><h3>Laminar30 Single</h3><div class="price">$600</div><p>One TIG-welded stainless Laminar30 unit. Sales tax and shipping additional where applicable.</p></div>
 <div class="price-card"><h3>Fitment &amp; Hardware</h3><div class="price" style="font-size:2rem">Confirm Fitment</div><p>V-band configuration available at additional cost.</p><p><a class="button" href="laminar30-request.html">Request Fitment</a></p></div>
-</div><p class="price-note">Shipping additional. Fitment and availability confirmed before ordering. <a href="laminar30.html" style="color:#ff6b6b;text-decoration:underline">View Laminar30 details.</a></p></div></section>
+</div><p class="price-note">Prices exclude applicable sales tax and shipping. No free-shipping threshold. Final total and fitment confirmed before ordering. <a href="laminar30.html" style="color:#ff6b6b;text-decoration:underline">View Laminar30 details.</a></p></div></section>
 
     <section class="dark" id="build-gallery">
       <div class="inner">
@@ -579,6 +646,28 @@ section{padding-block:95px}
   clip.addEventListener('timeupdate', function () {
     if (clip.currentTime >= end) { clip.pause(); clip.currentTime = start; }
   });
+})();
+</script>
+
+<script>
+/* Pricing is an estimate of merchandise only: tax and shipping require customer details. */
+(function(){
+ const root=document.querySelector('#laminar30-shop');if(!root)return;
+ let pack='single',hardware='standard';
+ const paint=()=>{
+  root.querySelectorAll('[data-db-pack]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.dbPack===pack)));
+  root.querySelectorAll('[data-db-hardware]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.dbHardware===hardware)));
+  const cost=pack==='single'?600:1100;
+  const formatted=String.fromCharCode(36)+cost.toLocaleString('en-US');
+  document.getElementById('db-config-price').textContent=formatted;
+  document.getElementById('db-config-total').textContent=formatted+' + tax & shipping'+(hardware==='vband'?' + V-band quote':'');
+  const details='Laminar30 '+(pack==='single'?'single':'pair')+', '+(hardware==='vband'?'V-band hardware requested':'standard ends');
+  const link=document.getElementById('db-config-link');
+  link.href='laminar30-request.html?configuration='+encodeURIComponent(details);
+ };
+ root.querySelectorAll('[data-db-pack]').forEach(b=>b.addEventListener('click',()=>{pack=b.dataset.dbPack;paint()}));
+ root.querySelectorAll('[data-db-hardware]').forEach(b=>b.addEventListener('click',()=>{hardware=b.dataset.dbHardware;paint()}));
+ paint();
 })();
 </script>
 </body>
