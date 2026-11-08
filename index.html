@@ -658,8 +658,7 @@ section{padding-block:95px}
   root.querySelectorAll('[data-db-pack]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.dbPack===pack)));
   root.querySelectorAll('[data-db-hardware]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.dbHardware===hardware)));
   const cost=pack==='single'?600:1100;
-  const formatted='
-</html>+cost.toLocaleString('en-US');
+  const formatted=String.fromCharCode(36)+cost.toLocaleString('en-US');
   document.getElementById('db-config-price').textContent=formatted;
   document.getElementById('db-config-total').textContent=formatted+' + tax & shipping'+(hardware==='vband'?' + V-band quote':'');
   const details='Laminar30 '+(pack==='single'?'single':'pair')+', '+(hardware==='vband'?'V-band hardware requested':'standard ends');
